@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.example.test" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Slanfans testings</name>
+    <name>MTG Cube Draft</name>
     <description>
-        Slanfan is testing many different things!
+        Slanfan is testing draft simulator!
     </description>
     <author email="slanfan@gmail.com" href="http://slanfan.com">
-        Slanfan Production
+        Slanfan Software
     </author>
     <content src="index.html" />
     <access origin="*" />
