@@ -10,20 +10,15 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/jquery.scrollz.css" />
+        <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+        
+        <!-- Jquery -->
         <script src="js/jquery-1.11.1.js"></script>
-        <script src="js/jssor.slider.mini.js"></script>
         
         <!-- Google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-        <script>
-            $(document).ready(function ($) {
-                var options = { $AutoPlay: false };
-                var jssor_slider = new $JssorSlider$('booster', options);
-            });
-        </script>
         <style>
-            #booster {
+            #booster-old {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -41,69 +36,110 @@
                 height: 100vh;
             }
             .card-container {
-                position: absolute;
                 width: 80vw;
                 height: 80vh;
-                padding-top: 20vh;
-                padding-bottom: 10vh;
+                padding-top: 5vw;
+                padding-bottom: 5vh;
                 padding-left: 10vw;
                 padding-right: 10vw;
                 overflow: hidden;
             }
-            .card {
+            .non-selected {
                 border-radius: 2vh;
                 background-color: black;
                 overflow: hidden;
                 padding: 2vh;
+                -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
+                box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
+            }
+            .selected {
+                border-radius: 2vh;
+                background-color: #4CAF00;
+                overflow: hidden;
+                padding: 2vh;
+                -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
+                box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
+            }
+            #booster {
+                position: absolute;
+                top: 10vh;
+                left: 1vw;
+                right: 1vw;
+                bottom: 10vh;
+            }
+            body {
+                background: url('img/background-1.jpg') center center fixed;
+                background-size: cover;
             }
         </style>
         <title>Slanfans testing</title>
     </head>
     <body>
+        <!-- Slick slider -->
+        <script type="text/javascript" src="js/jquery.slick.js"></script>
         
         <div id="booster">
-            <!-- Slides Container -->
-            <div u="slides" class="booster-container">
-                <div>
-                    <div class="card-container">
-                        <center>
-                            <div class="card">
-                                <img src="img/cards/containmentpriest.full.jpg" width="100%">
-                            </div>
-                        </center>
-                    </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-1" class="card non-selected">
+                    <img src="img/cards/containmentpriest.full.jpg" width="100%" onclick="selectCard(1)">
                 </div>
-                <div>
-                    <div class="card-container">
-                        <center>
-                            <div class="card">
-                                <img src="img/cards/souloftheharvest.full.jpg" width="100%">
-                            </div>
-                        </center>
-                    </div>
-                </div>
-                <div>
-                    <div class="card-container">
-                        <center>
-                            <div class="card">
-                                <img src="img/cards/azuremage.full.jpg" width="100%">
-                            </div>
-                        </center>
-                    </div>
-                </div>
-                <div>
-                    <div class="card-container">
-                        <center>
-                            <div class="card">
-                                <img src="img/cards/drana,kalastriabloodchief.full.jpg" width="100%">
-                            </div>
-                        </center>
-                    </div>
                 </div>
             </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-2" class="card non-selected">
+                    <img src="img/cards/azuremage.full.jpg" width="100%" onclick="selectCard(2)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-3" class="card non-selected">
+                    <img src="img/cards/drana,kalastriabloodchief.full.jpg" width="100%" onclick="selectCard(3)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-4" class="card non-selected">
+                    <img src="img/cards/souloftheharvest.full.jpg" width="100%" onclick="selectCard(4)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-5" class="card non-selected">
+                    <img src="img/cards/balance.full.jpg" width="100%" onclick="selectCard(5)">
+                </div>
+                </div>
+            </div>
+            
         </div>
         
-        
+        <script>
+            $(document).ready(function (){
+                $('#booster').slick({
+                    dots: true,
+                    arrows: false
+                });
+            });
+            function selectCard(id) {
+                $(".card").each(function () {
+                    $(this).removeClass('selected');
+                    $(this).addClass('non-selected');
+                });
+                var card = 'card-' + id;
+                $('#' + card).addClass('selected');
+                $('#' + card).removeClass('non-selected');
+                console.log('class added to #' + card);
+            }
+        </script>
         <!-- NOTHING BELOW THIS LINE! -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
