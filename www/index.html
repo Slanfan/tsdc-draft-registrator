@@ -83,7 +83,7 @@
             <div>
                 <div class="card-container">
                 <div id="card-1" class="card non-selected">
-                    <img src="img/cards/containmentpriest.full.jpg" width="100%" onclick="selectCard(1)">
+                    <img src="img/cards/containmentpriest.full.jpg" width="100%" onclick="selectCard(1)" ondblclick="pickCard(1)">
                 </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
             <div>
                 <div class="card-container">
                 <div id="card-2" class="card non-selected">
-                    <img src="img/cards/azuremage.full.jpg" width="100%" onclick="selectCard(2)">
+                    <img src="img/cards/azuremage.full.jpg" width="100%" onclick="selectCard(2)" ondblclick="pickCard(2)">
                 </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
             <div>
                 <div class="card-container">
                 <div id="card-3" class="card non-selected">
-                    <img src="img/cards/drana,kalastriabloodchief.full.jpg" width="100%" onclick="selectCard(3)">
+                    <img src="img/cards/drana,kalastriabloodchief.full.jpg" width="100%" onclick="selectCard(3)" ondblclick="pickCard(3)">
                 </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
             <div>
                 <div class="card-container">
                 <div id="card-4" class="card non-selected">
-                    <img src="img/cards/souloftheharvest.full.jpg" width="100%" onclick="selectCard(4)">
+                    <img src="img/cards/souloftheharvest.full.jpg" width="100%" onclick="selectCard(4)" ondblclick="pickCard(4)">
                 </div>
                 </div>
             </div>
@@ -115,7 +115,87 @@
             <div>
                 <div class="card-container">
                 <div id="card-5" class="card non-selected">
-                    <img src="img/cards/balance.full.jpg" width="100%" onclick="selectCard(5)">
+                    <img src="img/cards/balance.full.jpg" width="100%" onclick="selectCard(5)" ondblclick="pickCard(5)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-1" class="card non-selected">
+                    <img src="img/cards/containmentpriest.full.jpg" width="100%" onclick="selectCard(1)" ondblclick="pickCard(1)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-2" class="card non-selected">
+                    <img src="img/cards/azuremage.full.jpg" width="100%" onclick="selectCard(2)" ondblclick="pickCard(2)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-3" class="card non-selected">
+                    <img src="img/cards/drana,kalastriabloodchief.full.jpg" width="100%" onclick="selectCard(3)" ondblclick="pickCard(3)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-4" class="card non-selected">
+                    <img src="img/cards/souloftheharvest.full.jpg" width="100%" onclick="selectCard(4)" ondblclick="pickCard(4)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-5" class="card non-selected">
+                    <img src="img/cards/balance.full.jpg" width="100%" onclick="selectCard(5)" ondblclick="pickCard(5)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-1" class="card non-selected">
+                    <img src="img/cards/containmentpriest.full.jpg" width="100%" onclick="selectCard(1)" ondblclick="pickCard(1)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-2" class="card non-selected">
+                    <img src="img/cards/azuremage.full.jpg" width="100%" onclick="selectCard(2)" ondblclick="pickCard(2)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-3" class="card non-selected">
+                    <img src="img/cards/drana,kalastriabloodchief.full.jpg" width="100%" onclick="selectCard(3)" ondblclick="pickCard(3)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-4" class="card non-selected">
+                    <img src="img/cards/souloftheharvest.full.jpg" width="100%" onclick="selectCard(4)" ondblclick="pickCard(4)">
+                </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card-container">
+                <div id="card-5" class="card non-selected">
+                    <img src="img/cards/balance.full.jpg" width="100%" onclick="selectCard(5)" ondblclick="pickCard(5)">
                 </div>
                 </div>
             </div>
@@ -138,6 +218,9 @@
                 $('#' + card).addClass('selected');
                 $('#' + card).removeClass('non-selected');
                 console.log('class added to #' + card);
+            }
+            function pickCard(id) {
+                alert('Card with id:' + id + ' picked!');
             }
         </script>
         <!-- NOTHING BELOW THIS LINE! -->
