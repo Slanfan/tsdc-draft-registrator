@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+ 
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.scrollz.css" />
+        <script src="js/jquery-1.11.1.js"></script>
+        <script src="js/jssor.slider.mini.js"></script>
+        
+        <!-- Google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <script>
+            $(document).ready(function ($) {
+                var options = { $AutoPlay: false };
+                var jssor_slider = new $JssorSlider$('booster', options);
+            });
+        </script>
+        <style>
+            #booster {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 10px;
+            }
+            .booster-container {
+                cursor: pointer;
+                position: absolute;
+                overflow: hidden;
+                left: 0px;
+                top: 0px;
+                width: 100vw;
+                height: 100vh;
+            }
+            .card-container {
+                position: absolute;
+                width: 80vw;
+                height: 80vh;
+                padding-top: 20vh;
+                padding-bottom: 10vh;
+                padding-left: 10vw;
+                padding-right: 10vw;
+            }
+            .card {
+                border-radius: 2vh;
+                background-color: black;
+                overflow: hidden;
+                padding: 1%;
+            }
+        </style>
+        <title>Slanfans testing</title>
+    </head>
+    <body>
+        
+        <div id="booster">
+            <!-- Slides Container -->
+            <div u="slides" class="booster-container">
+                <div>
+                    <div class="card-container">
+                        <center>
+                            <div class="card">
+                                <img src="img/cards/black_lotus.jpg" width="100%">
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div>
+                    <div class="card-container">
+                        <center>
+                            <div class="card">
+                                <img src="img/cards/prognostic_sphinx.jpg" width="100%">
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div>
+                    <div class="card-container">
+                        <center>
+                            <div class="card">
+                                <img src="img/cards/shelldock_isle.jpg" width="100%">
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div>
+                    <div class="card-container">
+                        <center>
+                            <div class="card">
+                                <img src="img/cards/spellskite.jpg" width="100%">
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- NOTHING BELOW THIS LINE! -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
