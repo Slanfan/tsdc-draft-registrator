@@ -71,12 +71,27 @@
                 background: url('img/background-1.jpg') center center fixed;
                 background-size: cover;
             }
+            #info {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 5vh;
+                background-color: rgba(0,0,0,0.3);
+                padding-top: 5vh;
+                font-size: 20px;
+                font-family: 'Open Sans Condensed', sans-serif;
+                color: white;
+                text-align: center;
+            }
         </style>
         <title>Slanfans testing</title>
     </head>
     <body>
         <!-- Slick slider -->
         <script type="text/javascript" src="js/jquery.slick.js"></script>
+        
+        <div id="info"></div>
         
         <div id="booster">
             
@@ -122,7 +137,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-1" class="card non-selected">
+                <div id="card-6" class="card non-selected">
                     <img src="img/cards/containmentpriest.full.jpg" width="100%" onclick="selectCard(6)" ondblclick="pickCard(6)">
                 </div>
                 </div>
@@ -130,7 +145,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-2" class="card non-selected">
+                <div id="card-7" class="card non-selected">
                     <img src="img/cards/dackfayden.full.jpg" width="100%" onclick="selectCard(7)" ondblclick="pickCard(7)">
                 </div>
                 </div>
@@ -138,7 +153,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-3" class="card non-selected">
+                <div id="card-8" class="card non-selected">
                     <img src="img/cards/dreamfracture.full.jpg" width="100%" onclick="selectCard(8)" ondblclick="pickCard(8)">
                 </div>
                 </div>
@@ -146,7 +161,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-4" class="card non-selected">
+                <div id="card-9" class="card non-selected">
                     <img src="img/cards/grenzo,dungeonwarden.full.jpg" width="100%" onclick="selectCard(9)" ondblclick="pickCard(9)">
                 </div>
                 </div>
@@ -154,7 +169,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-5" class="card non-selected">
+                <div id="card-10" class="card non-selected">
                     <img src="img/cards/paliano,thehighcity.full.jpg" width="100%" onclick="selectCard(10)" ondblclick="pickCard(10)">
                 </div>
                 </div>
@@ -162,7 +177,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-1" class="card non-selected">
+                <div id="card-11" class="card non-selected">
                     <img src="img/cards/phagetheuntouchable.full.jpg" width="100%" onclick="selectCard(11)" ondblclick="pickCard(11)">
                 </div>
                 </div>
@@ -170,7 +185,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-2" class="card non-selected">
+                <div id="card-12" class="card non-selected">
                     <img src="img/cards/drana,kalastriabloodchief.full.jpg" width="100%" onclick="selectCard(12)" ondblclick="pickCard(12)">
                 </div>
                 </div>
@@ -178,7 +193,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-3" class="card non-selected">
+                <div id="card-13" class="card non-selected">
                     <img src="img/cards/reflectingpool.full.jpg" width="100%" onclick="selectCard(13)" ondblclick="pickCard(13)">
                 </div>
                 </div>
@@ -186,7 +201,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-4" class="card non-selected">
+                <div id="card-14" class="card non-selected">
                     <img src="img/cards/souloftheharvest.full.jpg" width="100%" onclick="selectCard(14)" ondblclick="pickCard(14)">
                 </div>
                 </div>
@@ -194,7 +209,7 @@
             
             <div>
                 <div class="card-container">
-                <div id="card-5" class="card non-selected">
+                <div id="card-15" class="card non-selected">
                     <img src="img/cards/squirrelnest.full.jpg" width="100%" onclick="selectCard(15)" ondblclick="pickCard(15)">
                 </div>
                 </div>
@@ -220,7 +235,7 @@
                 console.log('class added to #' + card);
             }
             function pickCard(id) {
-                alert('Card with id:' + id + ' picked!');
+                $('#info').html('Card with id: ' + id + ' picked!');
             }
         </script>
         <!-- NOTHING BELOW THIS LINE! -->
