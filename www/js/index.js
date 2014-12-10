@@ -15,7 +15,7 @@ $(document).ready(function () {
         error: function(response) {
             // nothing
         }
-    }, function () {
+    }).done(function () {
         $("#booster").slick({
             dots: false,
             arrows: false
