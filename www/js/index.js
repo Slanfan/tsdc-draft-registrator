@@ -1,6 +1,21 @@
 $(document).ready(function () {
     var url = "http://www.slanfan.com/phone-gap/mysql/booster.php";
-    $("#booster").load( url, function () {
+    $.ajax({
+        dataType: "json",
+        url: url,
+        success: function(response) {
+            if (response["status"] === "success") {
+                // load cards and booster info
+                $("#booster").html(data["cards"]);
+                $("#booster-info").html(data["booster-info"]);
+            } else {
+                // nothing
+            }
+        },
+        error: function(response) {
+            // nothing
+        }
+    }, function () {
         $("#booster").slick({
             dots: false,
             arrows: false
