@@ -1,7 +1,10 @@
 $(document).ready(function () {
     var url = "http://www.slanfan.com/phone-gap/mysql/booster.php";
-    $( "#booster" ).load( url ).promise().done(function () {
-        
+    $( "#booster" ).load( url, function () {
+        $( "#booster" ).slick({
+            dots: false,
+            arrows: false
+        });
     });
 });
 function selectCard(id) {
