@@ -6,8 +6,8 @@ $(document).ready(function () {
         success: function(response) {
             if (response["status"] === "success") {
                 // load cards and booster info
-                $("#booster").html(data["cards"]);
-                $("#booster-info").html(data["booster-info"]);
+                $("#booster").html(response["cards"]);
+                $("#booster-info").html(response["booster-info"]);
             } else {
                 // nothing
             }
