@@ -117,7 +117,7 @@
         
         <div id="booster">
             
-            <div>
+            <!--<div>
                 <div class="card-container">
                 <div id="card-1" class="card non-selected">
                     <img src="img/cards/ancestralrecall.full.jpg" width="100%" onclick="selectCard(1)" />
@@ -252,41 +252,9 @@
                 </div>
             </div>
             
-        </div>
+        </div>-->
         
-        <script>
-            $(document).ready(function (){
-                $( "#booster" ).slick({
-                    dots: false,
-                    arrows: false
-                });
-            });
-            function selectCard(id) {
-                
-                var card = "card-" + id;
-                
-                if ($("#" + card).hasClass( "selected" )) {
-                    $("#" + card).removeClass( "selected" );
-                    $("#" + card).addClass( "non-selected" );
-                    $("#" + card).find( ".pick-button" ).animate({ "bottom": "-20vh" }, "fast" );
-                    $( "#info" ).html( "No card selected" );
-                } else {
-                    $( ".card" ).each(function () {
-                        $(this).removeClass( "selected" );
-                        $(this).addClass( "non-selected" );
-                        $(this).find( ".pick-button" ).animate({ "bottom": "-40vh" }, "fast" );
-                    }).promise().done(function () {
-                        $( "#" + card).addClass( "selected" );
-                        $( "#" + card).removeClass( "non-selected" );
-                        $( "#" + card).find( ".pick-button" ).animate({ "bottom": "4vh" }, "slow" );
-                        $( "#info" ).html( "Card with id: " + id + " selected" );
-                    });
-                }
-            }
-            function pickCard(id) {
-                $( "#info" ).html( "Card with id: " + id + " picked" );
-            }
-        </script>
+        
         <!-- NOTHING BELOW THIS LINE! -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
