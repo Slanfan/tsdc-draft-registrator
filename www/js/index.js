@@ -1,7 +1,10 @@
-$(document).ready(function (){
-    $( "#booster" ).slick({
-        dots: false,
-        arrows: false
+$(document).ready(function () {
+    var url = "http://www.slanfan.com/phone-gap/mysql/booster.php";
+    $( "#booster" ).load( url ).promise().done(function () {
+        $( "#booster" ).slick({
+            dots: false,
+            arrows: false
+        });
     });
 });
 function selectCard(id) {
@@ -29,7 +32,3 @@ function selectCard(id) {
 function pickCard(id) {
     $( "#info" ).html( "Card with id: " + id + " picked" );
 }
-$(document).ready(function () {
-    var url = "http://www.slanfan.com/phone-gap/mysql/booster.php";
-    $( "#booster" ).load( url );
-});
