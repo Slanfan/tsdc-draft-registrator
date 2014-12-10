@@ -36,7 +36,10 @@
                 height: 100vh;
             }
             .card {
-                
+                border-radius: 2vh;
+                background-color: black;
+                overflow: hidden;
+                padding: 2vh;
             }
             .card-container {
                 position: relative;
@@ -49,27 +52,19 @@
                 overflow: hidden;
             }
             .non-selected {
-                border-radius: 2vh;
-                background-color: black;
-                overflow: hidden;
-                padding: 2vh;
                 -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
                 box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
             }
             .selected {
-                border-radius: 2vh;
-                background-color: #4CAF00;
-                overflow: hidden;
-                padding: 2vh;
-                -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
-                box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
+                -webkit-box-shadow: 0 0 20px 5px rgba(0,255,0,0.7);
+                box-shadow: 0 0 20px 5px rgba(0,255,0,0.7);
             }
             #booster {
                 position: absolute;
                 top: 10vh;
                 left: 1vw;
                 right: 1vw;
-                bottom: 10vh;
+                bottom: 0;
             }
             body {
                 background: url('img/background-1.jpg') center center fixed;
@@ -89,22 +84,27 @@
                 text-align: center;
             }
             .pick-button {
-                display: none;
                 position: absolute;
-                bottom: 2vh;
+                bottom: -40vh;
                 height: 8vh;
                 left: 20vw;
                 right: 20vw;
                 
                 text-align: center;
-                background-color: rgba(0, 200, 0, 0.8);
+                text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
                 font-family: 'Open Sans Condensed', sans-serif;
                 font-size: 4vh;
-                line-height: 8vh;
+                line-height: 7vh;
                 color: white;
+                
                 z-index: 1000;
+                
                 border: 2px solid rgba(0, 150, 0, 0.5);
+                background-color: rgba(0, 200, 0, 0.8);
                 border-radius: 8px;
+                
+                -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
+                box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
             }
         </style>
         <title>Slanfans testing</title>
@@ -113,7 +113,7 @@
         <!-- Slick slider -->
         <script type="text/javascript" src="js/jquery.slick.js"></script>
         
-        <div id="info"></div>
+        <div id="info">No card selected</div>
         
         <div id="booster">
             
@@ -256,24 +256,35 @@
         
         <script>
             $(document).ready(function (){
-                $('#booster').slick({
+                $( "#booster" ).slick({
                     dots: false,
                     arrows: false
                 });
             });
             function selectCard(id) {
-                $(".card").each(function () {
-                    $(this).removeClass('selected');
-                    $(this).addClass('non-selected');
-                    $(this).find('.pick-button').hide();
-                });
-                var card = 'card-' + id;
-                $('#' + card).addClass('selected');
-                $('#' + card).removeClass('non-selected');
-                $('#' + card).find('.pick-button').show();
+                
+                var card = "card-" + id;
+                
+                if ($("#" + card).hasClass( "selected" )) {
+                    $("#" + card).removeClass( "selected" );
+                    $("#" + card).addClass( "non-selected" );
+                    $("#" + card).find( ".pick-button" ).animate({ "bottom": "-20vh" }, "fast" );
+                    $( "#info" ).html( "No card selected" );
+                } else {
+                    $( ".card" ).each(function () {
+                        $(this).removeClass( "selected" );
+                        $(this).addClass( "non-selected" );
+                        $(this).find( ".pick-button" ).animate({ "bottom": "-40vh" }, "fast" );
+                    }).promise().done(function () {
+                        $( "#" + card).addClass( "selected" );
+                        $( "#" + card).removeClass( "non-selected" );
+                        $( "#" + card).find( ".pick-button" ).animate({ "bottom": "4vh" }, "slow" );
+                        $( "#info" ).html( "Card with id: " + id + " selected" );
+                    });
+                }
             }
             function pickCard(id) {
-                $('#info').html('Card with id: ' + id + ' picked!');
+                $( "#info" ).html( "Card with id: " + id + " picked" );
             }
         </script>
         <!-- NOTHING BELOW THIS LINE! -->
