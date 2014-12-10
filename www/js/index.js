@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var url = "http://www.slanfan.com/phone-gap/mysql/booster.php";
-    $( "#booster" ).load( url, function () {
-        $( "#booster" ).slick({
+    $("#booster").load( url, function () {
+        $("#booster").slick({
             dots: false,
             arrows: false
         });
@@ -9,26 +9,29 @@ $(document).ready(function () {
 });
 function selectCard(id) {
     
-    var card = "card-" + id;
+    var Name = $("#card-" + id).data("card-name");
     
-    if ($("#" + card).hasClass( "selected" )) {
-        $("#" + card).removeClass( "selected" );
-        $("#" + card).addClass( "non-selected" );
-        $("#" + card).find( ".pick-button" ).animate({ "bottom": "-20vh" }, "fast" );
-        $( "#info" ).html( "No card selected" );
+    if ($("#card-" + id).hasClass("selected")) {
+        $("#card-" + id).removeClass("selected");
+        $("#card-" + id).addClass("non-selected");
+        $("#card-" + id).find( ".pick-button" ).animate({ "bottom": "-20vh" }, "fast" );
+        $("#info").html("No card selected");
     } else {
-        $( ".card" ).each(function () {
-            $(this).removeClass( "selected" );
-            $(this).addClass( "non-selected" );
-            $(this).find( ".pick-button" ).animate({ "bottom": "-40vh" }, "fast" );
+        $(".card").each(function () {
+            $(this).removeClass("selected");
+            $(this).addClass("non-selected");
+            $(this).find(".pick-button").animate({ "bottom": "-40vh" }, "fast" );
         }).promise().done(function () {
-            $( "#" + card).addClass( "selected" );
-            $( "#" + card).removeClass( "non-selected" );
-            $( "#" + card).find( ".pick-button" ).animate({ "bottom": "4vh" }, "slow" );
-            $( "#info" ).html( "Card with id: " + id + " selected" );
+            $("#card-" + id).addClass("selected");
+            $("#card-" + id).removeClass("non-selected");
+            $("#card-" + id).find( ".pick-button" ).animate({ "bottom": "4vh" }, "slow" );
+            $("#info").html("Card with id: " + Name + " selected");
         });
     }
 }
 function pickCard(id) {
-    $( "#info" ).html( "Card with id: " + id + " picked" );
+    
+    var Name = $("#card-" + id).data("card-name");
+    
+    $("#info").html("Card with id: " + Name + " picked");
 }
