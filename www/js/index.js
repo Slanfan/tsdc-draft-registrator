@@ -31,5 +31,5 @@ function pickCard(id) {
 }
 $(document).ready(function () {
     var url = "http://www.slanfan.com/phone-gap/mysql/booster.php";
-    $( "#info" ).load( url );
+    $( "#booster" ).load( url );
 });
