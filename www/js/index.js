@@ -25,7 +25,7 @@ function selectCard(id) {
             $("#card-" + id).addClass("selected");
             $("#card-" + id).removeClass("non-selected");
             $("#card-" + id).find( ".pick-button" ).animate({ "bottom": "4vh" }, "slow" );
-            $("#info").html("Card with id: " + Name + " selected");
+            $("#info").html(Name + " selected");
         });
     }
 }
@@ -33,5 +33,5 @@ function pickCard(id) {
     
     var Name = $("#card-" + id).data("card-name");
     
-    $("#info").html("Card with id: " + Name + " picked");
+    $("#info").html(Name + " picked");
 }
