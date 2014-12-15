@@ -9,28 +9,126 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <!-- Fonts -->
+        <link href='css/fonts.css' rel='stylesheet' type='text/css' />
+        
+        <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/pick-list.css" />
         <link rel="stylesheet" type="text/css" href="css/slick.css"/>
         
         <!-- Jquery -->
         <script src="js/jquery-1.11.1.js"></script>
         
-        <!-- Google fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <title>Slanfans testing</title>
     </head>
     <body>
-        <!-- Slick slider -->
-        <script type="text/javascript" src="js/jquery.slick.js"></script>
+        <div class="page" id="draft">
+            <!-- Slick slider -->
+            <script type="text/javascript" src="js/jquery.slick.js"></script>
+            
+            <div id="info">
+                Version 2.03
+            </div>
+            
+            <div class="btn-show-picks" onclick="showPage('pick-list')">
+                <img src="img/icon-picks.png" />
+            </div>
+            
+            <div id="booster"></div>
+            
+            <div id="booster-info">Info will be loaded here</div>
+        </div>
         
-        <div id="info">Version 2.03</div>
-        
-        <div id="booster"></div>
-        
-        <div id="booster-info">Info will be loaded here</div>
+        <div class="page" id="pick-list">
+            <div class="header-wrapper">
+                <div class="header">
+                    <div class="header-text">
+                        your picks
+                    </div>
+                    <div class="header-icon-left">
+                        <img src="img/icon-close-arrow.png" height="100%" onclick="hidePage('pick-list');"/>
+                    </div>
+                    <div class="header-icon-right" onclick="showFilter()">
+                        <img src="img/icon-filter-list.png" height="100%" />
+                    </div>
+                    <div class="header-extra">
+                        <ul class="header-extra-list">
+                            <li>
+                                <div id="filter-w" class="filter-button filter-selected" onclick="filterColor('w')">
+                                    <div class="filter-image-wrapper">
+                                        <img src="img/mana-symbols/w-clean.png" />
+                                    </div>
+                                </div>
+                                <div class="filter-text">show/hide white cards</div>
+                            </li>
+                            
+                            <li>
+                                <div id="filter-u" class="filter-button filter-selected" onclick="filterColor('u')">
+                                    <div class="filter-image-wrapper">
+                                        <img src="img/mana-symbols/u-clean.png" />
+                                    </div>
+                                </div>
+                                <div class="filter-text">show/hide blue cards</div>
+                            </li>
+                            
+                            <li>
+                                <div id="filter-b" class="filter-button filter-selected" onclick="filterColor('b')">
+                                    <div class="filter-image-wrapper">
+                                        <img src="img/mana-symbols/b-clean.png" />
+                                    </div>
+                                </div>
+                                <div class="filter-text">show/hide black cards</div>
+                            </li>
+                            
+                            <li>
+                                <div id="filter-r" class="filter-button filter-selected" onclick="filterColor('r')">
+                                    <div class="filter-image-wrapper">
+                                        <img src="img/mana-symbols/r-clean.png" />
+                                    </div>
+                                </div>
+                                <div class="filter-text">show/hide red cards</div>
+                            </li>
+                            
+                            <li>
+                                <div id="filter-g" class="filter-button filter-selected" onclick="filterColor('g')">
+                                    <div class="filter-image-wrapper">
+                                        <img src="img/mana-symbols/g-clean.png" />
+                                    </div>
+                                </div>
+                                <div class="filter-text">show/hide green cards</div>
+                            </li>
+                            
+                            <li>
+                                <div id="filter-artifact" class="filter-button filter-selected" onclick="filterType('artifact')">
+                                    <div class="filter-image-wrapper">
+                                        <img src="img/type-symbols/artifact.png" />
+                                    </div>
+                                </div>
+                                <div class="filter-text">show/hide artifact cards</div>
+                            </li>
+                            
+                            <li>
+                                <div id="filter-land" class="filter-button filter-selected" onclick="filterType('land')">
+                                    <div class="filter-image-wrapper">
+                                        <img src="img/type-symbols/land.png" />
+                                    </div>
+                                </div>
+                                <div class="filter-text">show/hide land cards</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-list-wrapper">
+                <ul class="pick-list"></ul>
+            </div>
+        </div>
         
         <!-- NOTHING BELOW THIS LINE! -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/pick-list.js"></script>
     </body>
 </html>

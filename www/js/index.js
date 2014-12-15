@@ -22,6 +22,12 @@ $(document).ready(function () {
         });
     });
 });
+function showPage(page) {
+    $('#'+page).show();
+}
+function hidePage(page) {
+    $('#'+page).hide();
+}
 function selectCard(id) {
     
     var Name = $("#card-" + id).data("card-name");
@@ -46,7 +52,35 @@ function selectCard(id) {
 }
 function pickCard(id) {
     
-    var Name = $("#card-" + id).data("card-name");
+    /*
+    <li>
+        <div id="filter-w" class="filter-button selected" onclick="filterColor('w')">
+            <div class="filter-image-wrapper">
+                <img src="mana-symbols/w-clean.png" />
+            </div>
+        </div>
+        <div class="filter-text">show/hide white cards</div>
+    </li>
+    */
     
+    var Name = $("#card-" + id).data("card-name");
+    var Color = $("#card-" + id).data("card-color");
+    var Cost = $("#card-" + id).data("card-cost");
+    var Cmc = $("#card-" + id).data("card-cmc");
+    var Type = $("#card-" + id).data("card-type");
+    var Multiverseid = $("#card-" + id).data("card-id");
+    var Manacost;
+    
+    var result = Cost.match(/[^{}]+/g);
+    for(var i = 0; i < result.length; i++) {
+        Manacost += '<div class="mana-symbol"><img src="mana-symbols/' + result[i] + '.png"></div>';
+    }
+    
+    var Listitem = '<li class="card-list-item color-' + Color + '" data-color="' + Color +'" data-cmc="' + Cmc + '" data-name="' + Name + '" data-type="' + Type + '"><div class="type-box" onclick="sortType()"><img class="type-symbol" src="type-symbols/' + Type + '.png"></div><div class="name-box">' + Name + '</div><div class="cost-box" onclick="sortCost()">' + Manacost + '</div><div class="card-box"><div class="card-wrapper"><img class="card-image" src="http://mtgimage.com/multiverseid/' + Multiverseid + '.jpg" width="100%" /></div></div></li>';
+    
+    $('.pick-list').append(Listitem);
     $("#info").html(Name + " picked");
+    
+    
+    
 }
