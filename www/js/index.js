@@ -1,4 +1,21 @@
 $(document).ready(function () {
+    
+    var move = $(window).width() * 1.1;
+    $('.page').animate( {
+        right: '-=' + move,
+        left: '+=' + move
+    });
+    
+    $('#draft').animate( {
+        right: '+=' + move,
+        left: '-=' + move
+    });
+    
+    setTimeout(function () {
+        $('#splash').fadeOut('fast');
+    }, 3000);
+});
+$(document).ready(function () {
     var url = "http://www.slanfan.com/phone-gap/mysql/booster.php";
     $.ajax({
         dataType: "json",
@@ -23,10 +40,18 @@ $(document).ready(function () {
     });
 });
 function showPage(page) {
-    $('#'+page).show();
+    var move = $(window).width() * 1.1;
+    $('#'+page).animate( {
+        right: '+=' + move,
+        left: '-=' + move
+    }, 1000);
 }
 function hidePage(page) {
-    $('#'+page).hide();
+    var move = $(window).width() * 1.1;
+    $('#'+page).animate( {
+        right: '-=' + move,
+        left: '+=' + move
+    });
 }
 function selectCard(id) {
     
@@ -51,17 +76,6 @@ function selectCard(id) {
     }
 }
 function pickCard(id) {
-    
-    /*
-    <li>
-        <div id="filter-w" class="filter-button selected" onclick="filterColor('w')">
-            <div class="filter-image-wrapper">
-                <img src="mana-symbols/w-clean.png" />
-            </div>
-        </div>
-        <div class="filter-text">show/hide white cards</div>
-    </li>
-    */
     
     var Name = $("#card-" + id).data("card-name");
     var Color = $("#card-" + id).data("card-color");

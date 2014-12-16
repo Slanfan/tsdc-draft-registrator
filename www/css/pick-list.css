@@ -105,7 +105,7 @@
     box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
 }
 .header-wrapper {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -127,20 +127,21 @@
 }
 .header-text {
     position: absolute;
-    top: 1vh;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 1vh;
+    padding-top: 5vh;
     text-align: center;
     font-family: 'Avenir Next';
+    font-size: 4vh;
     font-weight: 100;
-    font-size: 6vh;
     color: white;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
 }
 .header-icon-left {
     position: absolute;
-    top: 1vh;
+    top: 4vh;
     left: 1vh;
     bottom: 1vh;
     -webkit-filter: drop-shadow(1px 1px 0px rgba(255, 255, 255, 0.4));
@@ -148,7 +149,7 @@
 }
 .header-icon-right {
     position: absolute;
-    top: 1vh;
+    top: 4vh;
     right: 1vh;
     bottom: 1vh;
     -webkit-filter: drop-shadow(1px 1px 0px rgba(255, 255, 255, 0.4));

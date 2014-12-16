@@ -24,28 +24,38 @@
         <title>Slanfans testing</title>
     </head>
     <body>
+        
+        <div id="splash">
+            <p>
+                mtg cube drafter
+                <br>
+                <span class="version">
+                    version 2.03
+                </span>
+                <br>
+                <img src="img/loading-3.gif" height="32px">
+            </p>
+        </div>
         <div class="page" id="draft">
             <!-- Slick slider -->
             <script type="text/javascript" src="js/jquery.slick.js"></script>
             
-            <div id="info">
-                Version 2.03
-            </div>
+            <div id="info"></div>
             
             <div class="btn-show-picks" onclick="showPage('pick-list')">
                 <img src="img/icon-picks.png" />
             </div>
             
-            <div id="booster"></div>
-            
             <div id="booster-info">Info will be loaded here</div>
+            
+            <div id="booster"></div>
         </div>
         
         <div class="page" id="pick-list">
             <div class="header-wrapper">
                 <div class="header">
                     <div class="header-text">
-                        your picks
+                        Your Picks
                     </div>
                     <div class="header-icon-left">
                         <img src="img/icon-close-arrow.png" height="100%" onclick="hidePage('pick-list');"/>

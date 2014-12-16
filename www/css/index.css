@@ -34,13 +34,33 @@
 }
 #booster {
     position: absolute;
-    top: 10vh;
-    left: 1vw;
-    right: 1vw;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
+    padding-top: 10vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background: url('../img/background-1.jpg') center center fixed;
+    background-size: cover;
+    z-index: -10;
+}
+#info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5vh;
+    background-color: rgba(0,0,0,0.3);
+    padding-top: 5vh;
+    font-size: 4vh;
+    font-family: 'Avenir Next';
+    font-weight: 100;
+    color: white;
+    text-align: center;
 }
 #booster-info {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
@@ -59,24 +79,6 @@
     background-color: rgba(70, 70, 70, 1);
     -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
     box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
-}
-body {
-    background: url('../img/background-1.jpg') center center fixed;
-    background-size: cover;
-}
-#info {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5vh;
-    background-color: rgba(0,0,0,0.3);
-    padding-top: 5vh;
-    font-size: 20px;
-    font-family: 'Avenir Next';
-    font-weight: 100;
-    color: white;
-    text-align: center;
 }
 .pick-button {
     position: absolute;
@@ -107,19 +109,8 @@ body {
 
 
 
-#pick-list {
-    background-color: rgba(51, 51, 51, 1);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: scroll;
-    z-index: 1001;
-    display: none;
-}
 .btn-show-picks {
-    position: fixed;
+    position: absolute;
     top: 4.5vh;
     right: 1vh;
     height: 4vh;
@@ -128,4 +119,53 @@ body {
 }
 .btn-show-picks img {
     max-height: 100%;
+}
+.page {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: scroll;
+}
+
+/* pages */
+#draft {
+    z-index: 10;
+}
+#pick-list {
+    background-color: rgba(51, 51, 51, 1);
+    overflow: scroll;
+    z-index: 11;
+    -webkit-box-shadow: -10px 0px 40px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -10px 0px 40px 0px rgba(0,0,0,0.75);
+    box-shadow: -10px 0px 40px 0px rgba(0,0,0,0.75);
+}
+#splash {
+    position: fixed;
+    vertical-align: middle;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: black;
+    color: white;
+    font-family: 'Avenir Next', sans-serif;
+    font-size: 4vh;
+}
+#splash p {
+    /* font in viewport height % */
+    font-size: 5vh;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+    width: 100%;
+}
+#splash p .version {
+    /* font in viewport height % */
+    font-size: 2vh;
+    font-family: 'Avenir Next', sans-serif;
+    color: #CFCFCF;
 }
