@@ -1,34 +1,34 @@
 .color-w {
     background-size: 100% 100%;
-    background-image: url('color-bars/w.png');
+    background-image: url('../img/color-bars/w.png');
 }
 .color-u {
     background-size: 100% 100%;
-    background-image: url('color-bars/u.png');
+    background-image: url('../img/color-bars/u.png');
 }
 .color-b {
     background-size: 100% 100%;
-    background-image: url('color-bars/b.png');
+    background-image: url('../img/color-bars/b.png');
 }
 .color-r {
     background-size: 100% 100%;
-    background-image: url('color-bars/r.png');
+    background-image: url('../img/color-bars/r.png');
 }
 .color-g {
     background-size: 100% 100%;
-    background-image: url('color-bars/g.png');
+    background-image: url('../img/color-bars/g.png');
 }
 .color-a {
     background-size: 100% 100%;
-    background-image: url('color-bars/a.png');
+    background-image: url('../img/color-bars/a.png');
 }
 .color-mc {
     background-size: 100% 100%;
-    background-image: url('color-bars/mc.png');
+    background-image: url('../img/color-bars/mc.png');
 }
 .color-l {
     background-size: 100% 100%;
-    background-image: url('color-bars/l.png');
+    background-image: url('../img/color-bars/l.png');
 }
 .pick-list-wrapper {
     position: absolute;
