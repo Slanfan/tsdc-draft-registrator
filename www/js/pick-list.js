@@ -1,38 +1,32 @@
 function sortColor() {
-    $('ul.card-list>li').tsort({ charOrder: 'wubrga{mc}la[Æ]', data: 'color' }, { charOrder: 'wubrga{mc}la[Æ]', data: 'name' });
+    $('ul.pick-list>li').tsort({ charOrder: 'wubrga{mc}la[Æ]', data: 'color' }, { charOrder: 'wubrga{mc}la[Æ]', data: 'name' });
     console.log("sort by color");
 }
 function sortCost() {
-    $('ul.card-list>li').tsort({ charOrder: '1[w]2[u]', data: 'color' }, { order: 'asc', data: 'cmc' });
+    $('ul.pick-list>li').tsort({ charOrder: '1[w]2[u]', data: 'color' }, { order: 'asc', data: 'cmc' });
     console.log("sort by cost");
 }
 function sortType() {
-    $('ul.card-list>li').tsort({ charOrder: 'wubrga{mc}l', data: 'color' }, { charOrder: 'wubrga{mc}la[Æ]', data: 'name' });
+    $('ul.pick-list>li').tsort({ charOrder: 'wubrga{mc}l', data: 'color' }, { charOrder: 'wubrga{mc}la[Æ]', data: 'name' });
     console.log("sort by type");
 }
-$(document).ready(function (){
-    $( ".name-box" ).bind({
-        click: function() {
-            // get card name
-            var cardName = $(this).closest('li').data('name');
-            // hide/show card
-            $(this).parent().find('.card-box').toggle();
-            
-            console.log("toggle card: "+cardName);
-        }
-    });
+$( ".pick-list" ).on('click', 'div.name-box', function() {
+    // get card name
+    var cardName = $(this).closest('li').data('name');
+    // hide/show card
+    $(this).parent().find('.card-box').toggle();
     
-    $('.card-image').bind({
-        click: function() {
-            // get card name
-            var cardName = $(this).closest('li').data('name');
-            // hide/show card
-            $(this).parent().parent().toggle();
-            
-            console.log("toggle card: "+cardName);
-        }
-    })
+    console.log("toggle card: "+cardName);
 });
+
+$('.pick-list').on('click', 'div.card-image', function() {
+    // get card name
+    var cardName = $(this).closest('li').data('name');
+    // hide/show card
+    $(this).parent().parent().toggle();
+    
+    console.log("toggle card: "+cardName);
+})
 function showFilter() {
     $('.header-extra').slideToggle();
 }

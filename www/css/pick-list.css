@@ -68,6 +68,7 @@
     font-family: "Mplantin";
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
     float: left;
+    cursor: pointer;
 }
 .cost-box {
     vertical-align: middle;

@@ -70,7 +70,7 @@ function selectCard(id) {
         }).promise().done(function () {
             $("#card-" + id).addClass("selected");
             $("#card-" + id).removeClass("non-selected");
-            $("#card-" + id).find( ".pick-button" ).animate({ "bottom": "4vh" }, "slow" );
+            $("#card-" + id).find( ".pick-button" ).animate({ "bottom": "4vh" }, 300 );
             $("#info").html(Name + " selected");
         });
     }
