@@ -86,7 +86,7 @@ function pickCard(id) {
     var Multiverseid = $("#card-" + id).data("card-id");
     var Manacost = '';
     
-    if (Color === 'L') {
+    if (Color === 'l') {
         // Nothing
     } else {
         var result = Cost.match(/[^{}]+/g);
