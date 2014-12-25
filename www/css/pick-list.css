@@ -97,7 +97,7 @@
     display: none;
 }
 .card-box {
-    display: inline-block;
+    display: block;
     margin: 10vw;
 }
 .card-wrapper {
