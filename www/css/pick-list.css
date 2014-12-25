@@ -35,6 +35,8 @@
     left: 0;
     top: 10vh;
     right: 0;
+    bottom: 0;
+    overflow: scroll;
 }
 .pick-list {
     list-style: none;
