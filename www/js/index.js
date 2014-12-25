@@ -61,7 +61,7 @@ function selectCard(id) {
     if ($("#card-" + id).hasClass("selected")) {
         $("#card-" + id).removeClass("selected");
         $("#card-" + id).addClass("non-selected");
-        $("#card-" + id).find( ".pick-button" ).animate({ "bottom": "-20vh" }, "fast" );
+        $("#card-" + id).find( ".pick-button" ).animate({ "bottom": "-40vh" }, "fast" );
         $("#info").html("No card selected");
     } else {
         $(".card").each(function () {
@@ -71,7 +71,7 @@ function selectCard(id) {
         }).promise().done(function () {
             $("#card-" + id).addClass("selected");
             $("#card-" + id).removeClass("non-selected");
-            $("#card-" + id).find( ".pick-button" ).animate({ "bottom": "4vh" }, 300 );
+            $("#card-" + id).find( ".pick-button" ).animate({ "bottom": "5vh" }, 300 );
             $("#info").html(Name + " selected");
         });
     }
