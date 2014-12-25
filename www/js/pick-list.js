@@ -25,9 +25,6 @@ $('.pick-list').on('click', 'div.card-image', function() {
     $(this).parent().parent().toggle();
     console.log("toggle card: "+cardName);
 });
-function toggleCard(id) {
-    $('#'+id).toggle();
-}
 function showFilter() {
     $('.header-extra').slideToggle();
 }
