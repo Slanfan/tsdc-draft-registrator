@@ -88,7 +88,7 @@ function pickCard(id) {
     
     var result = Cost.match(/[^{}]+/g);
     for(var i = 0; i < result.length; i++) {
-        Manacost += '<div class="mana-symbol"><img src="img/mana-symbols/' + result[i] + '.png"></div>';
+        Manacost += '<div class="mana-symbol"><img src="img/mana-symbols/' + result[i].toLowerCase() + '.png"></div>';
     }
     
     var Listitem = '<li class="pick-list-item color-' + Color + '" data-color="' + Color +'" data-cmc="' + Cmc + '" data-name="' + Name + '" data-type="' + Type + '"><div class="type-box" onclick="sortType()"><img class="type-symbol" src="img/type-symbols/' + Type + '.png"></div><div class="name-box">' + Name + '</div><div class="cost-box" onclick="sortCost()">' + Manacost + '</div><div class="card-box"><div class="card-wrapper"><img class="card-image" src="http://mtgimage.com/multiverseid/' + Multiverseid + '.jpg" width="100%" /></div></div></li>';
