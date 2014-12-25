@@ -497,7 +497,7 @@ while($card = mysql_fetch_array($boosterQuery)) {
     // store card output
     $cards .= '<div>';
     $cards .= '  <div class="card-container">';
-    $cards .= '      <div id="card-' . $cardId . '" class="card non-selected" data-card-name="' . $cardName . '" data-card-cost="' . $cardCost .'" data-card-cmc="' . $cardCmc . '" data-card-color="' . $cardColor . '" data-card-type="' . $cardType . '" data-card-id="' . $cardId . '">';
+    $cards .= '      <div id="card-' . $cardId . '" class="card non-selected" data-card-name="' . $cardName . '" data-card-cost="' .   $cardCost .'" data-card-cmc="' . $cardCmc . '" data-card-color="' . $cardColor . '" data-card-type="' . $cardType . '" data-card-id="' . $cardId . '">';
     $cards .= '          <img src="http://mtgimage.com/multiverseid/' . $cardId . '.jpg" width="100%" onclick="selectCard(' . $cardId . ')" />';
     $cards .= '          <div class="pick-button" onclick="pickCard(' . $cardId . ')">pick card</div>';
     $cards .= '    </div>';

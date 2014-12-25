@@ -14,6 +14,7 @@ $(document).ready(function () {
     setTimeout(function () {
         $('#splash').fadeOut('fast');
     }, 3000);
+    
 });
 $(document).ready(function () {
     var url = "http://www.slanfan.com/phone-gap/mysql/booster.php";
