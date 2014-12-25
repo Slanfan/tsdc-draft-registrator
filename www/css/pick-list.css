@@ -93,8 +93,11 @@
 .mana-symbol img {
     height: 2.5vh;
 }
-.card-box {
+.card-box-wrapper {
     display: none;
+}
+.card-box {
+    display: inline-block;
     margin: 10vw;
 }
 .card-wrapper {
