@@ -94,6 +94,7 @@
 .card-box {
     display: none;
     margin: 10vw;
+    position: relative;
 }
 .card-wrapper {
     border-radius: 2vh;
