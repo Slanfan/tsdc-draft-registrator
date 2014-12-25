@@ -95,7 +95,7 @@ function pickCard(id) {
         }
     }
     
-    var Listitem = '<li class="pick-list-item color-' + Color + '" data-color="' + Color +'" data-cmc="' + Cmc + '" data-name="' + Name + '" data-type="' + Type + '"><div class="type-box" onclick="sortType()"><img class="type-symbol" src="img/type-symbols/' + Type + '.png"></div><div class="name-box">' + Name + '</div><div class="cost-box" onclick="sortCost()">' + Manacost + '</div><div class="card-box"><div class="card-wrapper"><img class="card-image" src="http://mtgimage.com/multiverseid/' + Multiverseid + '.jpg" width="100%" /></div></div></li>';
+    var Listitem = '<li class="pick-list-item color-' + Color + '" data-color="' + Color +'" data-cmc="' + Cmc + '" data-name="' + Name + '" data-type="' + Type + '"><div class="type-box" onclick="sortType()"><img class="type-symbol" src="img/type-symbols/' + Type + '.png"></div><div class="name-box" onclick="toggleCard(' + Multiverseid + ')">' + Name + '</div><div class="cost-box" onclick="sortCost()">' + Manacost + '</div><div class="card-box" id="' + Multiverseid + '"><div class="card-wrapper"><img class="card-image" src="http://mtgimage.com/multiverseid/' + Multiverseid + '.jpg" width="100%" onclick="toggleCard(' + Multiverseid + ')"/></div></div></li>';
     
     $('.pick-list').append(Listitem);
     $("#info").html(Name + " picked");

@@ -15,7 +15,6 @@ $( ".pick-list" ).on('click', 'div.name-box', function() {
     var cardName = $(this).closest('li').data('name');
     // hide/show card
     $(this).parent().find('.card-box').toggle();
-    
     console.log("toggle card: "+cardName);
 });
 
@@ -24,9 +23,11 @@ $('.pick-list').on('click', 'div.card-image', function() {
     var cardName = $(this).closest('li').data('name');
     // hide/show card
     $(this).parent().parent().toggle();
-    
     console.log("toggle card: "+cardName);
-})
+});
+function toggleCard(id) {
+    $('#'+id).toggle();
+}
 function showFilter() {
     $('.header-extra').slideToggle();
 }
