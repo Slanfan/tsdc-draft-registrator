@@ -1,171 +1,102 @@
-.booster-container {
-    cursor: pointer;
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+}
+.auto-card-name {
     position: absolute;
-    overflow: hidden;
-    left: 0px;
-    top: 0px;
-    width: 100vw;
-    height: 100vh;
-}
-.card {
-    border-radius: 2vh;
-    background-color: black;
-    overflow: hidden;
-    padding: 1.4vh;
-}
-
-.card-container {
-    position: relative;
-    width: 80vw;
-    height: 80vh;
-    padding-top: 5vw;
-    padding-bottom: 5vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    overflow: hidden;
-}
-.non-selected {
-    -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
-    box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
-}
-.selected {
-    -webkit-box-shadow: 0 0 20px 5px rgba(0,255,0,0.7);
-    box-shadow: 0 0 20px 5px rgba(0,255,0,0.7);
-}
-#booster {
-    position: absolute;
-    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    padding-top: 10vh;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    background: url('../img/background-1.jpg') center center fixed;
-    background-size: cover;
-    z-index: -10;
-}
-#info {
-    position: absolute;
     top: 0;
+    height: 5vh;
+    display: inline-block;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.7);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 6vh;
+    font-size: 3vh;
+    color: white;
+}
+.keypad-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5vh;
+    height: 53vh;
+    height: auto;
+}
+.keypad {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 90vw;
+    height: auto;
+    border-spacing: 2px;
+}
+.keypad td {
+    background-color: rgba(200,200,200,0.7);
+    cursor: pointer;
+    font-size: 4vh;
+    border: 1px solid rgba(0,0,0,0.4);
+    text-align: center;
+    text-transform: uppercase;
+    width: 30vw;
+    height: 12vh;
+}
+.keypad td:active {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+.keypad .clear {
+    background-color: rgba(255,200,200,0.7);
+    font-weight: 800;
+}
+.keypad .add {
+    background-color: rgba(200,255,200,0.7);
+    font-weight: 800;
+}
+.card-list-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60vh;
+    bottom: 4vh;
+    height: auto;
+    margin-left: 5.5vw;
+    margin-right: 5.5vw;
+    overflow: scroll;
+}
+.card-list {
+    padding: 0;
+    color: white;
+}
+.card-list li {
+    display: inline-block;
+    position: relative;
+    width: 96%;
+    height: 6vh;
+    text-align: left;
+    padding-left: 4%;
+    line-height: 8vh;
+    /*background-color: rgba(255,255,255,0.5);*/
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    font-size: 4vh;
+}
+.pick-info {
+    position: absolute;
+    bottom: 0;
     left: 0;
     right: 0;
     height: 5vh;
-    background-color: rgba(0,0,0,0.3);
-    padding-top: 5vh;
+    display: inline-block;
+    width: 100vw;
+    background-color: rgba(0,0,0,1);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 6vh;
     font-size: 3vh;
-    font-family: 'Avenir Next';
-    font-weight: 100;
     color: white;
-    text-align: center;
-}
-#booster-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4vh;
-    
-    text-align: center;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
-    font-family: 'Avenir Next';
-    font-size: 2vh;
-    line-height: 3.5vh;
-    color: white;
-    
-    border-top: 1px solid rgba(40, 40, 40, 0.5);
-    
-    z-index: 1000;
-    background-color: rgba(70, 70, 70, 1);
-    -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
-    box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
-}
-.pick-button {
-    position: absolute;
-    bottom: -40vh;
-    height: 8vh;
-    left: 20vw;
-    right: 20vw;
-    
-    text-align: center;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
-    font-family: 'Avenir Next';
-    font-size: 4vh;
-    line-height: 7vh;
-    color: white;
-    
-    z-index: 100;
-    
-    border: 2px solid rgba(0, 150, 0, 0.5);
-    background-color: rgba(0, 200, 0, 0.8);
-    border-radius: 8px;
-    
-    -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
-    box-shadow: 0 0 20px 5px rgba(0,0,0,0.7);
-}
-
-
-
-
-
-
-.btn-show-picks {
-    position: absolute;
-    top: 4.5vh;
-    right: 1vh;
-    height: 4vh;
-    width: 4vh;
-    overflow: hidden;
-}
-.btn-show-picks img {
-    max-height: 100%;
-}
-.page {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: scroll;
-}
-
-/* pages */
-#draft {
-    z-index: 10;
-}
-#pick-list {
-    background-color: rgba(51, 51, 51, 1);
-    overflow: scroll;
-    z-index: 11;
-    -webkit-box-shadow: -10px 0px 40px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: -10px 0px 40px 0px rgba(0,0,0,0.75);
-    box-shadow: -10px 0px 40px 0px rgba(0,0,0,0.75);
-}
-#splash {
-    position: fixed;
-    vertical-align: middle;
-    text-align: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: black;
-    color: white;
-    font-family: 'Avenir Next', sans-serif;
-    font-size: 4vh;
-}
-#splash p {
-    /* font in viewport height % */
-    font-size: 5vh;
-    position: absolute;
-    top: 35%;
-    text-align: center;
-    width: 100%;
-}
-#splash p .version {
-    /* font in viewport height % */
-    font-size: 2vh;
-    font-family: 'Avenir Next', sans-serif;
-    color: #CFCFCF;
 }
