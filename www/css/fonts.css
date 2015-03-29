@@ -1,7 +1,11 @@
 @font-face {
-    font-family: "Mplantin";
-    src: url(fonts/Mplantin.ttf);
+    font-family: "Inconsolata-Bold";
+    src: url(fonts/Inconsolata-Bold.ttf);
     
-    font-family: "Avenir Next";
-    src: url(fonts/AvenirNextLTPro-UltLtCn.otf);
+    font-family: "Inconsolata-Regular";
+    src: url(fonts/Inconsolata-Regular.ttf);
+    
+    font-family: "Monda-Bold";
+    src: url(fonts/Monda-Bold.ttf);
+    
 }
