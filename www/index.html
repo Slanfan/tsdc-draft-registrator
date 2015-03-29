@@ -22,8 +22,11 @@
         <title>Slanfans testing</title>
     </head>
     <body>
-        <input type="text" id="card-id">
-        <div class="auto-card-name">Please enter card id</div>
+        
+        <input type="hidden" id="card-id">
+        <div class="pick-info" id="pick-info">Pack 1 - Card 1</div>
+	<div class="card-number-viewer" id="card-number"># 000</div>
+        <div class="auto-card-name" id="card-name">Please enter card id</div>
         <div class="keypad-container">
             <table class="keypad">
                 <tr>
@@ -48,10 +51,31 @@
                 </tr>
             </table>
         </div>
-        <div class="pick-info">Pack 1 - Pick 1</div>
+      
+      <div class="booster-viewer">
+        <div class="booster-header" id="booster-header"></div>
+        <div class="card-list-container">
+            <ol class="card-list" id="booster">
+                
+            </ol>
+        </div>
+      </div>
+      
+      <div class="output-container">
+        <table id="output-table" width="100%">
+            <tbody>
+                <tr class="header">
+                    <td>Pack</td>
+                    <td>Card</td>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Picked</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
         
         <!-- NOTHING BELOW THIS LINE! -->
-        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
     </body>
 </html>
