@@ -29,7 +29,7 @@ for (i = 1; i <= pack_qty; i++) {
 /* SET NUMPAD FUNCTIONS */
 $(document).ready(function() {
     // function for numpads
-    $(".keypad .numpad").click(function() {
+    $(".keypad .numpad").bind('touchstart', function() {
         var number = $(this).html();
         var id = parseInt($("#card-id").val() + number);
         $("#card-id").val(id);
@@ -46,14 +46,14 @@ $(document).ready(function() {
     });
     
     // function for clear button
-    $(".keypad .clear").click(function() {
+    $(".keypad .clear").bind('touchstart', function() {
         $("#card-id").val('');
         $("#card-name").html("Please enter card id");
     	$("#card-number").html("# 000");
     });
     
     // function for add button
-    $(".keypad .add").click(function() {
+    $(".keypad .add").bind('touchstart', function() {
         var id = $("#card-id").val();
         var name = $("#card-name").html();
         
