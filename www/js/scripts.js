@@ -7,7 +7,7 @@ var cubelist_type = 'local';
 var cubelist = {};
 var list_count;
 
-$.getJSON('../get_list.php', function(data) {
+$.getJSON('http://www.slanfan.com/cubescripts/get_list.php', function(data) {
     $.each(data, function(key, val) {
         cubelist[key] = val;
     });
