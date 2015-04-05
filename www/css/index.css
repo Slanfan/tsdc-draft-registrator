@@ -3,7 +3,7 @@
 http://www.google.com/fonts#UsePlace:use/Collection:Playfair+Display|Poiret+One|Monda|Ubuntu+Condensed|Inconsolata|Pathway+Gothic+One|Voltaire|Montserrat|Roboto+Condensed
 */
 body {
-    background-image: url('../img/bg.jpg');
+    background-image: url('../img/bg_brown.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -23,7 +23,7 @@ body {
     line-height: 6vh;
     font-size: 3vh;
     color: white;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.7);
 }
 .card-number-viewer {
     font-family: Monda;
@@ -39,7 +39,7 @@ body {
     line-height: 5vh;
     font-size: 3vh;
     color: white;
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0,0,0,0.65);
 }
 .auto-card-name {
     font-family: Voltaire;
@@ -55,13 +55,13 @@ body {
     line-height: 5vh;
     font-size: 3vh;
     color: white;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.60);
 }
 .keypad-container {
     position: absolute;
     left: 0;
     right: 0;
-    top: 40vh;
+    top: 50vh;
 }
 .keypad {
     font-family: Monda;
