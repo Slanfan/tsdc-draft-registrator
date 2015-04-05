@@ -52,6 +52,11 @@ $(document).ready(function() {
     	$("#card-number").html("# 000");
     });
     
+    // function for test button
+    $(".keypad .test").bind('touchstart', function() {
+        navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+    });
+    
     // function for add button
     $(".keypad .add").bind('touchstart', function() {
         var id = $("#card-id").val();
@@ -150,3 +155,14 @@ function pick_card(id,name,packNr,cardNr) {
     // CLEAR CARD LIST
     $("#booster").empty();
 }
+
+function onSuccess(acceleration) {
+    alert('Acceleration X: ' + acceleration.x + '\n' +
+          'Acceleration Y: ' + acceleration.y + '\n' +
+          'Acceleration Z: ' + acceleration.z + '\n' +
+          'Timestamp: '      + acceleration.timestamp + '\n');
+};
+
+function onError() {
+    alert('onError!');
+};
