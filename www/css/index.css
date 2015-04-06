@@ -135,7 +135,7 @@ body {
     right: 0;
     top: 100vh;
     bottom: 0;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.4);
 }
 .keypad {
     font-family: Monda;
@@ -269,7 +269,7 @@ table {
 .action-container {
     display: none;
     position: absolute;
-    top: 15vh;
+    top: 17.5vh;
     left: 0;
     right: 0;
     height: 25vh;
@@ -298,7 +298,7 @@ table {
     position: relative;
     display: inline-block;
     margin-top: 5vh;
-    margin-left: 2vw;
+    margin-left: -4.7vw;
     opacity: 0.1;
 }
 .action-middle {

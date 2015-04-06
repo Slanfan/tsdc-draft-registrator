@@ -171,6 +171,14 @@ function pick_card(id,name,packNr,cardNr) {
         
         return;
     }
+    
+    navigator.notification.alert(
+        'Card ' + name + ' picked.',                            // message
+        alertDismissed,                                         // callback
+        'Pack #' + pack_num + ' - Pick#' + pick_num,            // title
+        'OK'                                                    // buttonName
+    );
+    
     pick_num++;
     pack_num++;
     card_num = 1;
@@ -189,4 +197,8 @@ function pick_card(id,name,packNr,cardNr) {
     
     // CLEAR CARD LIST
     $("#booster").empty();
+}
+
+function alertDismissed() {
+    // do something
 }
