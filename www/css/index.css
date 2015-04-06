@@ -329,3 +329,6 @@ table {
   margin-top: -3vh;
   opacity: 0.5;
 }
+.action-middle::-webkit-scrollbar { 
+    display: none; 
+}
