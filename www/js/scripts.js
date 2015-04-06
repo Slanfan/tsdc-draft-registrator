@@ -3,6 +3,12 @@ var players = 0;
 var packs = 0;
 var card_qty = 0;
 var pack_qty = 0;
+var pack = [];
+var card_sub = 0;
+var pick_num = 1;
+var pack_num = 1;
+var card_num = 1;
+
 var cubelist_type = 'local';
 var cubelist = {};
 var list_count;
@@ -14,15 +20,9 @@ $.getJSON('http://www.slanfan.com/cubescripts/get_list.php', function(data) {
     console.log(cubelist);
     list_count = Object.keys(cubelist).length;
 })
-.success(function() { console.log("success: getting cubelist from mysql query"); })
-.error(function() { console.log("error: getting cubelist from mysql query"); })
+.success(function() { console.log("success: getting cubelist from mysql query, working local."); })
+.error(function() { console.log("error: getting cubelist from mysql query, working online"); cubelist_type = 'online'; })
 .complete(function() { console.log("getJson: complete"); });
-
-var pack = [];
-var card_sub = 0;
-var pick_num = 1;
-var pack_num = 1;
-var card_num = 1;
 
 
 /* SET NUMPAD FUNCTIONS */
@@ -46,6 +46,8 @@ $(document).ready(function() {
         var players = parseInt( $( '#players' ).html() );
         var packs = parseInt( $( '#boosters' ).html() );
         var card_qty = parseInt( $( '#cards' ).html() );
+        
+        console.log( 'Players: ' + players + ' | Packs: ' + packs + ' | Cards: ' + card_qty );
         
         pack_qty = packs * players;
         
