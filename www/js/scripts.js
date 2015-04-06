@@ -1,8 +1,8 @@
 /* SET VARIABLES */
-var players = prompt("Number of players?");
-var packs = prompt("Number of boosters?");
-var card_qty = prompt("Number of cards in boosters?");
-var pack_qty = packs * players;
+var players = 0;
+var packs = 0;
+var card_qty = 0;
+var pack_qty = 0;
 var cubelist_type = 'local';
 var cubelist = {};
 var list_count;
@@ -14,9 +14,9 @@ $.getJSON('http://www.slanfan.com/cubescripts/get_list.php', function(data) {
     console.log(cubelist);
     list_count = Object.keys(cubelist).length;
 })
-.success(function() { alert("second success"); })
-.error(function() { alert("error"); })
-.complete(function() { alert("complete"); });
+.success(function() { console.log("success: getting cubelist from mysql query"); })
+.error(function() { console.log("error: getting cubelist from mysql query"); })
+.complete(function() { console.log("getJson: complete"); });
 
 var pack = [];
 var card_sub = 0;
@@ -24,30 +24,43 @@ var pick_num = 1;
 var pack_num = 1;
 var card_num = 1;
 
-for (i = 1; i <= pack_qty; i++) {
-   pack[i] = { card: []};
-}
-
 
 /* SET NUMPAD FUNCTIONS */
 $(document).ready(function() {
     
-    // animate info-container
-    $( ".info-container" ).animate({ "top": "+=15vh" }, {
-            duration: 500,
-            easing: 'easeOutExpo'
-        } );
-    $( ".keypad-container" ).animate( { "top": "-=50vh" }, {
-            duration: 500,
-            easing: 'easeOutExpo'
-        } );
-    
     
     // settingsbuttons
     $( '.btn' ).bind('touchstart', function() {
-        var test = $(this).closest( 'tr' ).find( '.number' ).html();
-        alert(test);
+        number = parseInt( $(this).closest( 'tr' ).find( '.number' ).html() );
+        if ( $(this).hasClass( 'Minus' ) ) {
+            number--;
+            $(this).closest( 'tr' ).find( '.number' ).html(number);
+        }
+        else if ( $(this).hasClass( 'Plus' ) ) {
+            number++;
+            $(this).closest( 'tr' ).find( '.number' ).html(number);
+        }
     }); 
+    
+    $( 'btnStart' ).bind( 'touchstart', function() {
+        var players = parseInt( $( '#players' ).html() );
+        var packs = parseInt( $( '#boosters' ).html() );
+        var card_qty = parseInt( $( '#cards' ).html() );
+        
+        pack_qty = packs * players;
+        
+        for (i = 1; i <= pack_qty; i++) {
+           pack[i] = { card: []};
+        }
+        
+        $( '.start-input' ).fadeOut( 'slow', function() {
+            // animate info-container
+            $( ".info-container" ).animate({ "top": "+=15vh" }, { duration: 500, easing: 'easeOutExpo' });
+            // animate keypad-container
+            $( ".keypad-container" ).animate( { "top": "-=50vh" }, { duration: 500, easing: 'easeOutExpo' });
+        });
+        
+    });
     
     // function for numpads
     $(".keypad .numpad").bind('touchstart', function() {
