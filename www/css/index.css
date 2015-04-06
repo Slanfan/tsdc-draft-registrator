@@ -273,6 +273,9 @@ table {
     left: 0;
     right: 0;
     height: 25vh;
+    background-color: rgba(0,0,0,0.2);
+    border-top: solid 0.2vh rgba(0,0,0,0.1);
+    border-bottom: solid 0.2vh rgba(255,255,255,0.1);
 }
 .action-right {
     background-image: url('../img/icon-right.png');
@@ -287,7 +290,7 @@ table {
     opacity: 0.1;
 }
 .action-left {
-    background-image: url('../img/icon-right.png');
+    background-image: url('../img/icon-left.png');
     float: left;
     width: 20vw;
     height: 15vh;
@@ -297,7 +300,6 @@ table {
     margin-top: 5vh;
     margin-left: 2vw;
     opacity: 0.1;
-    transform: scaleX(-1);
 }
 .action-middle {
     position: absolute;

@@ -117,7 +117,7 @@ $(document).ready(function() {
             $("#booster-header").html("Pick #" + pick_num);
             
             // OPEN PICK SELECTOR
-            $(".booster-viewer").animate({top: "0%"});            
+            $(".booster-viewer").animate({top: "0vh"});            
         } else {
             card_num++;
         }
@@ -185,7 +185,7 @@ function pick_card(id,name,packNr,cardNr) {
     $("#pick-info").html('Pack '+pack_num+' - card '+card_num);
     
     // CLOSE PICK SELECTOR
-    $(".booster-viewer").animate({top: "100%"});
+    $(".booster-viewer").animate({top: "100vh"});
     
     // CLEAR CARD LIST
     $("#booster").empty();
