@@ -42,7 +42,7 @@ $(document).ready(function() {
         }
     }); 
     
-    $( 'btnStart' ).bind( 'touchstart', function() {
+    $( '#btnStart' ).bind( 'touchstart', function() {
         var players = parseInt( $( '#players' ).html() );
         var packs = parseInt( $( '#boosters' ).html() );
         var card_qty = parseInt( $( '#cards' ).html() );
