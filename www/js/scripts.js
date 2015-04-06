@@ -43,9 +43,9 @@ $(document).ready(function() {
     }); 
     
     $( '#btnStart' ).bind( 'touchstart', function() {
-        var players = parseInt( $( '#players' ).html() );
-        var packs = parseInt( $( '#boosters' ).html() );
-        var card_qty = parseInt( $( '#cards' ).html() );
+        var players = parseInt( $( '#settingPlayers' ).html() );
+        var packs = parseInt( $( '#settingPacks' ).html() );
+        var card_qty = parseInt( $( '#settingCards' ).html() );
         
         console.log( 'Players: ' + players + ' | Packs: ' + packs + ' | Cards: ' + card_qty );
         
