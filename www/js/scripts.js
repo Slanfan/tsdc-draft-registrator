@@ -56,12 +56,14 @@ $(document).ready(function() {
         }
         
         $( '.start-input' ).fadeOut( 'slow', function() {
-            // animate info-container
-            $( ".info-container" ).animate({ "top": "+=15vh" }, { duration: 500, easing: 'easeOutExpo' });
-            // animate keypad-container
-            $( ".keypad-container" ).animate( { "top": "-=55vh" }, { duration: 500, easing: 'easeOutExpo' });
-            // animate action-container
-            $( ".action-container" ).fadeIn( "slow" );
+            setTimeout(function() {
+                // animate info-container
+                $( ".info-container" ).animate({ "top": "+=15vh" }, { duration: 1000, easing: 'easeOutExpo' });
+                // animate keypad-container
+                $( ".keypad-container" ).animate( { "top": "-=55vh" }, { duration: 1000, easing: 'easeOutExpo' });
+                // animate action-container
+                $( ".action-container" ).fadeIn( "slow" );
+            }, 500);
         });
         
     });
