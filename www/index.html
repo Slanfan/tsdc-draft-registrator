@@ -18,21 +18,82 @@
         
         <!-- Jquery -->
         <script src="js/jquery-1.11.1.js"></script>
-        
+        <script src="js/jquery-ui-1.11.4.js"></script>
 
         <title>TSDC: Draft Registrator</title>
-        <!-- Acceleration -->
-        <script src="js/org.apache.cordova.device-motion/Acceleration.js"></script>
-        <script src="js/org.apache.cordova.device-motion/accelerometer.js"></script>
         
         <title>Slanfans testing</title>
     </head>
     <body>
         
-        <input type="hidden" id="card-id">
-        <div class="pick-info" id="pick-info">Pack 1 - Card 1</div>
-	<div class="card-number-viewer" id="card-number"># 000</div>
-        <div class="auto-card-name" id="card-name">Please enter card id</div>
+        <input type="hidden" id="card-id" />
+        
+        <div class="start-input">
+            <div class="data players">
+                <p>Number of players?</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="btn Minus">-</div>
+                            </td>
+                            <td>
+                                <div class="number" id="players">8</div>
+                            </td>
+                            <td>
+                                <div class="btn Plus">+</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="data boosters">
+                <p>Number of booster?</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="btn Minus">-</div>
+                            </td>
+                            <td>
+                                <div class="number" id="boosters">3</div>
+                            </td>
+                            <td>
+                                <div class="btn Plus">+</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="data cards">
+                <p>Number of card in boosters?</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="btn Minus">-</div>
+                            </td>
+                            <td>
+                                <div class="number" id="cards">15</div>
+                            </td>
+                            <td>
+                                <div class="btn Plus">+</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="data start">
+                <div id="btnStart">start registration</div> 
+            </div>
+        </div>
+        
+        <div class="info-container">
+            <div class="pick-info" id="pick-info">Pack 1 - Card 1</div>
+            <div class="card-number-viewer" id="card-number"># 000</div>
+            <div class="auto-card-name" id="card-name">Please enter card id</div>
+        </div>
+        
         <div class="keypad-container">
             <table class="keypad">
                 <tr>

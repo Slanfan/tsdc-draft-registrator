@@ -13,7 +13,10 @@ $.getJSON('http://www.slanfan.com/cubescripts/get_list.php', function(data) {
     });
     console.log(cubelist);
     list_count = Object.keys(cubelist).length;
-});
+})
+.success(function() { alert("second success"); })
+.error(function() { alert("error"); })
+.complete(function() { alert("complete"); });
 
 var pack = [];
 var card_sub = 0;
@@ -28,6 +31,24 @@ for (i = 1; i <= pack_qty; i++) {
 
 /* SET NUMPAD FUNCTIONS */
 $(document).ready(function() {
+    
+    // animate info-container
+    $( ".info-container" ).animate({ "top": "+=15vh" }, {
+            duration: 500,
+            easing: 'easeOutExpo'
+        } );
+    $( ".keypad-container" ).animate( { "top": "-=50vh" }, {
+            duration: 500,
+            easing: 'easeOutExpo'
+        } );
+    
+    
+    // settingsbuttons
+    $( '.btn' ).bind('touchstart', function() {
+        var test = $(this).closest( 'tr' ).find( '.number' ).html();
+        alert(test);
+    }); 
+    
     // function for numpads
     $(".keypad .numpad").bind('touchstart', function() {
         var number = $(this).html();
