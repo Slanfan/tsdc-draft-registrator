@@ -1,8 +1,5 @@
 var chessClock;
 
-//var settingMins = window.localStorage.setItem( "settingsMin" );
-//var settingSecs = window.localStorage.setItem( "settingsSec" );
-
 if ( localStorage.getItem( 'settingsMin' ) ) {
     $( '.lblSettingsTime' ).html( localStorage.getItem( 'settingsMin' ) );
     $( '.m' ).html( localStorage.getItem( 'settingsMin' ) );
@@ -13,16 +10,17 @@ if ( localStorage.getItem( 'settingsSec' ) ) {
     $( '#secSlider' ).val( localStorage.getItem( 'settingsSec' ) );
     $( '#timerSec' ).html( localStorage.getItem( 'settingsSec' ) );
 }
-//var settingsMin = 25;
-//var settingsSec = 0;
 
-$( '#minSlider' ).mousemove( function() {
+$( '#minSlider' ).bind( 'touchmove', function() {
     $( '#timerMin' ).html( this.value );
 });
 
-$( '#secSlider' ).mousemove( function() {
+$( '#secSlider' ).bind( 'touchmove', function() {
     $( '#timerSec' ).html( this.value );
 });
+
+
+
 
 function saveSettings() {
     var Mins = $( '#minSlider' ).val();
@@ -34,7 +32,7 @@ function saveSettings() {
     $( '.settingsPanel' ).animate({ "top": "+=80vh" }, { duration: 1000, easing: 'easeOutExpo' });
 }
 
-$( '.btnChessClock' ).bind( 'click', function() {
+$( '.btnChessClock' ).bind( 'touchstart', function() {
     
     // show pause button
     $( '#btnPause' ).removeClass( 'btnHidden' );
@@ -75,7 +73,7 @@ var leadingZero = function (n) {
     else return n;
 }
 
-$( '.menuChessClock img' ).bind( 'click', function() {
+$( '.menuChessClock img' ).bind( 'touchstart', function() {
     
     // store action
     var action = $( this ).data( 'action' );
@@ -111,6 +109,9 @@ $( '.menuChessClock img' ).bind( 'click', function() {
                         // restore backgrounds
                         $( '.btnChessClock' ).css( 'background-color', '' );
                         
+                        var settingMins = window.localStorage.setItem( "settingsMin" );
+                        var settingSecs = 0;
+
                         // restore timers
                         $( '.m' ).html( settingsMin );
                         $( '.s' ).html( leadingZero( settingsSec ) );
