@@ -68,10 +68,10 @@ $( '.menuChessClock img' ).bind( 'click', function() {
             
         case 'reset':
             
-            navigator.notification.alert(
+            navigator.notification.confirm(
                 'Are you sure you like to reset?',                  // message
-                function(response) {
-                    if ( response == 'YES' ) {
+                function(buttonIndex) {
+                    if ( buttonIndex == 1 ) {
                         // restore backgrounds
                         $( '.btnChessClock' ).css( 'background-color', '' );
                         
