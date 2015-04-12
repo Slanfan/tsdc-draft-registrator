@@ -22,7 +22,7 @@ $( '#secSlider' ).bind( 'touchmove', function() {
 
 
 
-$( '.btnSaveSettings' ).bind( 'toucstart', function() {
+$( '.btnSaveSettings' ).bind( 'touchstart', function() {
     var Mins = $( '#minSlider' ).val();
     var Secs = $( '#secSlider' ).val();
     
