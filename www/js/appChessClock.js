@@ -1,6 +1,38 @@
 var chessClock;
-var settingsMin = 25;
-var settingsSec = 0;
+
+//var settingMins = window.localStorage.setItem( "settingsMin" );
+//var settingSecs = window.localStorage.setItem( "settingsSec" );
+
+if ( localStorage.getItem( 'settingsMin' ) ) {
+    $( '.lblSettingsTime' ).html( localStorage.getItem( 'settingsMin' ) );
+    $( '.m' ).html( localStorage.getItem( 'settingsMin' ) );
+    $( '#minSlider' ).val( localStorage.getItem( 'settingsMin' ) );
+    $( '#timerMin' ).html( localStorage.getItem( 'settingsMin' ) );
+}
+if ( localStorage.getItem( 'settingsSec' ) ) {
+    $( '#secSlider' ).val( localStorage.getItem( 'settingsSec' ) );
+    $( '#timerSec' ).html( localStorage.getItem( 'settingsSec' ) );
+}
+//var settingsMin = 25;
+//var settingsSec = 0;
+
+$( '#minSlider' ).mousemove( function() {
+    $( '#timerMin' ).html( this.value );
+});
+
+$( '#secSlider' ).mousemove( function() {
+    $( '#timerSec' ).html( this.value );
+});
+
+function saveSettings() {
+    var Mins = $( '#minSlider' ).val();
+    var Secs = $( '#secSlider' ).val();
+    
+    window.localStorage.setItem( "settingsMin", Mins );
+    window.localStorage.setItem( "settingsSec", Secs );
+    
+    $( '.settingsPanel' ).animate({ "top": "+=80vh" }, { duration: 1000, easing: 'easeOutExpo' });
+}
 
 $( '.btnChessClock' ).bind( 'click', function() {
     
@@ -12,7 +44,7 @@ $( '.btnChessClock' ).bind( 'click', function() {
     
     // set background to active
     $( '.btnChessClock' ).css( 'background-color', '' );
-    $( this ).css( 'background-color', 'rgba(255,175,0,1)' );
+    $( this ).css( 'background-color', '#FFA200' );
     
     // get active time
     var min = parseInt( $( this ).find( '.m' ).html() );
@@ -64,31 +96,34 @@ $( '.menuChessClock img' ).bind( 'click', function() {
             
         case 'settings':
             
+            $( '.settingsPanel' ).animate({ "top": "-=80vh" }, { duration: 1000, easing: 'easeOutExpo' });
             break;
             
         case 'reset':
             
             navigator.notification.confirm(
-                'Are you sure you like to reset?',                  // message
+                '',                  // message
                 function(buttonIndex) {
                     if ( buttonIndex == 1 ) {
+                        // pause timer
+                        clearInterval(chessClock);
+                        
                         // restore backgrounds
                         $( '.btnChessClock' ).css( 'background-color', '' );
                         
                         // restore timers
                         $( '.m' ).html( settingsMin );
-                        $( '.s' ).html( settingsSec );
+                        $( '.s' ).html( leadingZero( settingsSec ) );
                         
                     } else {
                         // nothing
                     }
                 },                                                  // callback
                 'Reset timer?',                                     // title
-                ['YES','NO']                                        // buttonName
+                ['Yes','No']                                        // buttonName
             );
             
             break;
-            
     }
     
 });

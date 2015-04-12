@@ -354,12 +354,19 @@ table {
 
 
 .btnChessClock {
-    background-color: rgba(100,100,100,1);
+    background-color: #646464;
     position: relative;
     margin: 5vh;
     border-radius: 1.5vw;
     height: 35vh;
     cursor: pointer;
+}
+.btnChessClock:active {
+    background-image: radial-gradient(center center, circle cover, #FFE3B3, #FFA200);
+    background-image: -o-radial-gradient(center center, circle cover, #FFE3B3, #FFA200);
+    background-image: -ms-radial-gradient(center center, circle cover, #FFE3B3, #FFA200);
+    background-image: -moz-radial-gradient(center center, circle cover, #FFE3B3, #FFA200);
+    background-image: -webkit-radial-gradient(center center, circle cover, #FFE3B3, #FFA200);
 }
 
 .btnChessClock p {
@@ -399,4 +406,172 @@ table {
 
 .btnHidden {
     -webkit-mask-image:-webkit-linear-gradient(top, rgba(0, 0, 0,.0), rgba(0, 0, 0,.0));
+}
+
+.settingsPanel {
+    position: absolute;
+    z-index: 10;
+    top: 100vh;
+    left: 0;
+    right: 0;
+    height: 80vh;
+    background-color: rgb(210, 210, 210);
+}
+
+.settingsPanel .title {
+    font-size: 6vh;
+    text-transform: uppercase;
+    color: black;
+    background-color: #8F8F8F;
+    border-bottom: 1px solid #818181;
+    border-top: 1px solid #818181;
+    height: 10vh;
+}
+.settingsPanel .content img {
+    position: absolute;
+    top: 15vh;
+    width: 80vw;
+    height: 80vw;
+    left: 10vw;
+    -webkit-mask-image:-webkit-linear-gradient(top, rgba(0, 0, 0,.05), rgba(0, 0, 0,.05));
+}
+
+.btnSaveSettings {
+    font-size: 5vh;
+    text-transform: uppercase;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8vh;
+    width: 90vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    background-color: #FFA200;
+    border-radius: 1vw;
+}
+
+.btnSaveSettings:active {
+    background-color: #DA8B04;
+}
+
+.btnSettingsMin {
+    position: absolute;
+    top: 30vh;
+    left: 0;
+    margin-left: 5vw;
+}
+.btnSettingsSec {
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    margin-left: 5vw;
+}
+.lblSettingsTime {
+    position: absolute;
+    text-align: center;
+    width: 90vw;
+    font-size: 8vh;
+    margin-left: 5vw;
+    color: black;
+}
+.lblSettingsTime.minutes {
+    top: 18vh;
+}
+.lblSettingsTime.seconds {
+    top: 38vh;
+}
+
+/* SLIDER STYLE */
+input[type=range] {
+    -webkit-appearance: none;
+    background: rgba(0,0,0,0);
+    width: 90vw;
+}
+input[type=range]:focus {
+    outline: none;
+}
+/* Slider */
+input[type=range]::-webkit-slider-runnable-track {
+    height: 10vw;
+    cursor: pointer;
+    animate: 0.2s;
+    background: rgba(0,0,0,0.4);
+    border-radius: 10vw;
+    padding: 0.5vw;
+}
+/* Thumb */
+input[type=range]::-webkit-slider-thumb {
+    border: 0.2vh solid rgb(120,120,120);
+    height: 9vw;
+    width: 9vw;
+    border-radius: 9vw;
+    background: -webkit-radial-gradient(rgb(220,220,220), rgb(200,200,200), rgb(160,160,160));
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: rgba(0,0,0,0.4);
+}
+
+
+/* Mozilla + IE */
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #2a6495;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #3071a9;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #367ebd;
 }

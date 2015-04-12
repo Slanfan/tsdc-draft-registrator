@@ -182,7 +182,7 @@
           </table>
         </div>
         
-        <div class="app">
+        <div class="app" id="chessClock">
             <div class="btnChessClock Flipped">
                 <p>
                     <span class="m">25</span>:<span class="s">00</span>
@@ -197,6 +197,17 @@
                 <p>
                     <span class="m">25</span>:<span class="s">00</span>
                 </p>
+            </div>
+            <div class="settingsPanel">
+                <div class="title">settings</div>
+                <div class="content">
+                    <img src="img/icon-settings.png" />
+                    <div class="lblSettingsTime minutes" id="timerMin">25</div>
+                    <input type="range" min="0" max="60" class="btnSettingsMin" onchange="updateMin(this.value)" id="minSlider" />
+                    <div class="lblSettingsTime seconds" id="timerSec">2</div>
+                    <input type="range" min="0" max="10" class="btnSettingsSec" onchange="updateSec(this.value)" id="secSlider" />
+                    <div class="btnSaveSettings" onclick="saveSettings()">save</div>
+                </div>
             </div>
         </div>
         
