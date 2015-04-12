@@ -22,7 +22,7 @@ $( '#secSlider' ).bind( 'touchmove', function() {
 
 
 
-function saveSettings() {
+$( '.btnSaveSettings' ).bind( 'toucstart', function() {
     var Mins = $( '#minSlider' ).val();
     var Secs = $( '#secSlider' ).val();
     
@@ -30,7 +30,7 @@ function saveSettings() {
     window.localStorage.setItem( "settingsSec", Secs );
     
     $( '.settingsPanel' ).animate({ "top": "+=80vh" }, { duration: 1000, easing: 'easeOutExpo' });
-}
+});
 
 $( '.btnChessClock' ).bind( 'touchstart', function() {
     
