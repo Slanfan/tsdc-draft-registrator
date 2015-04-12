@@ -111,7 +111,7 @@ $( '.menuChessClock img' ).bind( 'touchstart', function() {
                         
                         var settingMins = window.localStorage.setItem( "settingsMin" );
                         var settingSecs = 0;
-
+                        
                         // restore timers
                         $( '.m' ).html( settingsMin );
                         $( '.s' ).html( leadingZero( settingsSec ) );
