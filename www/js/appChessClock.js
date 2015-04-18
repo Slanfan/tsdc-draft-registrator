@@ -91,19 +91,23 @@ $( '.menuChessClock img' ).bind( 'touchstart', function() {
             
         case 'reset':
             
+            confirmReset();
+            
+            /*
             navigator.notification.confirm(
                 '',                  // message
                 confirmReset,         // callback
                 'Reset timer?',      // title
                 ['Yes','No']         // buttonName
             );
+            */
             
             break;
     }
     
 });
 
-function confirmReset (buttonIndex) {
+function confirmReset () {
     
     //alert( 'You selected button with index: ' + buttonIndex );
     
@@ -113,12 +117,9 @@ function confirmReset (buttonIndex) {
     // restore backgrounds
     $( '.btnChessClock' ).css( 'background-color', '' );
     
-    var settingMins = window.localStorage.getItem( "settingsMin" );
-    var settingSecs = 0;
-    
     // restore timers
-    $( '.m' ).html( settingsMin );
-    $( '.s' ).html( leadingZero( settingsSec ) );
+    $( '.m' ).html( window.localStorage.getItem( "settingsMin" ) );
+    $( '.s' ).html( leadingZero( 0 ) );
     
     // hide button
     $( '#btnPause' ).addClass( 'btnHidden' );
