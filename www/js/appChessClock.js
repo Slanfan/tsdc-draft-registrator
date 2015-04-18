@@ -101,7 +101,7 @@ $( '.menuChessClock img' ).bind( 'touchstart', function() {
             
             navigator.notification.confirm(
                 '',                  // message
-                onConfirm(),         // callback
+                confirmReset,         // callback
                 'Reset timer?',      // title
                 ['Yes','No']         // buttonName
             );
@@ -111,7 +111,10 @@ $( '.menuChessClock img' ).bind( 'touchstart', function() {
     
 });
 
-function onConfirm (buttonIndex) {
+function confirmReset (buttonIndex) {
+    
+    alert( 'You selected button with index: ' + buttonIndex );
+    
     if ( buttonIndex == 1 ) {
         // pause timer
         clearInterval(chessClock);
