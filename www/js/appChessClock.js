@@ -41,6 +41,16 @@ $( '.btnSaveSettings' ).bind( 'touchstart', function() {
 
 $( '.btnChessClock' ).bind( 'touchstart', function() {
     
+    // activate other button
+    $( '.btnChessClockInactive' ).addClass( 'btnChessClock' );
+    $( '.btnChessClockInactive' ).removeClass( '.btnChessClockInactive' );
+    
+    // remove class to prevent clicks
+    $( this ).removeClass( 'btnChessClock' );
+    
+    // add new class
+    $( this ).addClass( 'btnChessClockInactive' );
+    
     // show pause button
     $( '#btnPause' ).removeClass( 'btnHidden' );
     
@@ -48,16 +58,16 @@ $( '.btnChessClock' ).bind( 'touchstart', function() {
     clearInterval(chessClock);
     
     // set background to active
-    $( '.btnChessClock' ).css( 'background-color', '' );
-    $( this ).css( 'background-color', '#FFA200' );
+    $( this ).css( 'background-color', '' );
+    $( '.btnChessClock' ).css( 'background-color', '#FFA200' );
     
     // get active time
-    var min = parseInt( $( this ).find( '.m' ).html() );
-    var sec = parseInt( $( this ).find( '.s' ).html() );
+    var min = parseInt( $( '.btnChessClock' ).find( '.m' ).html() );
+    var sec = parseInt( $( '.btnChessClock' ).find( '.s' ).html() );
     
     // store elements
-    var minElement = $( this ).find( '.m' );
-    var secElement = $( this ).find( '.s' );
+    var minElement = $( '.btnChessClock' ).find( '.m' );
+    var secElement = $( '.btnChessClock' ).find( '.s' );
       
     // start timer
     chessClock = setInterval( function() {
