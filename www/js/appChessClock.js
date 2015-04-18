@@ -5,10 +5,20 @@ if ( localStorage.getItem( 'settingsMin' ) ) {
     $( '.m' ).html( localStorage.getItem( 'settingsMin' ) );
     $( '#minSlider' ).val( localStorage.getItem( 'settingsMin' ) );
     $( '#timerMin' ).html( localStorage.getItem( 'settingsMin' ) );
+} else {
+    window.localStorage.setItem( 'settingsMin', 25 );
+    $( '.lblSettingsTime' ).html( '25' );
+    $( '.m' ).html( localStorage.getItem( '25' ) );
+    $( '#minSlider' ).val( localStorage.getItem( '25' ) );
+    $( '#timerMin' ).html( localStorage.getItem( '25' ) );
 }
 if ( localStorage.getItem( 'settingsSec' ) ) {
     $( '#secSlider' ).val( localStorage.getItem( 'settingsSec' ) );
     $( '#timerSec' ).html( localStorage.getItem( 'settingsSec' ) );
+} else {
+    window.localStorage.setItem( "settingsSec", 2 );
+    $( '#secSlider' ).val( localStorage.getItem( '2' ) );
+    $( '#timerSec' ).html( localStorage.getItem( '2' ) );
 }
 
 $( '#minSlider' ).bind( 'touchmove', function() {
