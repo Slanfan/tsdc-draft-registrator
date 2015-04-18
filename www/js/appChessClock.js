@@ -101,30 +101,32 @@ $( '.menuChessClock img' ).bind( 'touchstart', function() {
             
             navigator.notification.confirm(
                 '',                  // message
-                function(buttonIndex) {
-                    if ( buttonIndex == 1 ) {
-                        // pause timer
-                        clearInterval(chessClock);
-                        
-                        // restore backgrounds
-                        $( '.btnChessClock' ).css( 'background-color', '' );
-                        
-                        var settingMins = window.localStorage.setItem( "settingsMin" );
-                        var settingSecs = 0;
-                        
-                        // restore timers
-                        $( '.m' ).html( settingsMin );
-                        $( '.s' ).html( leadingZero( settingsSec ) );
-                        
-                    } else {
-                        // nothing
-                    }
-                },                                                  // callback
-                'Reset timer?',                                     // title
-                ['Yes','No']                                        // buttonName
+                onConfirm(),         // callback
+                'Reset timer?',      // title
+                ['Yes','No']         // buttonName
             );
             
             break;
     }
     
 });
+
+function onConfirm (buttonIndex) {
+    if ( buttonIndex == 1 ) {
+        // pause timer
+        clearInterval(chessClock);
+        
+        // restore backgrounds
+        $( '.btnChessClock' ).css( 'background-color', '' );
+        
+        var settingMins = window.localStorage.setItem( "settingsMin" );
+        var settingSecs = 0;
+        
+        // restore timers
+        $( '.m' ).html( settingsMin );
+        $( '.s' ).html( leadingZero( settingsSec ) );
+        
+    } else {
+        // nothing
+    }
+}
