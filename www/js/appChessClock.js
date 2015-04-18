@@ -45,6 +45,19 @@ $( '.btnActive' ).bind( 'touchend', function() {
     $( '.btnChessClock' ).addClass( 'btnActive' );
     $( this ).removeClass( 'btnActive' );
     
+    // store variables of timer
+    var min = parseInt( $( this ).find( '.m' ).html() );
+    var sec = parseInt( $( this ).find( '.s' ).html() );
+    var extraSecs = localStorage.getItem( 'settingsSec' );
+    
+    // add extra seconds
+    sec += extraSecs;
+    
+    if ( sec > 59 ) {
+        sec = sec - 60;
+        min++;
+    }
+    
     // show pause button
     $( '#btnPause' ).removeClass( 'btnHidden' );
     
