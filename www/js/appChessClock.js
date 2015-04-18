@@ -48,10 +48,10 @@ $( '.btnActive' ).bind( 'touchend', function() {
     // store variables of timer
     var min = parseInt( $( this ).find( '.m' ).html() );
     var sec = parseInt( $( this ).find( '.s' ).html() );
-    var extraSecs = localStorage.getItem( 'settingsSec' );
+    var extraSecs = parseInt( localStorage.getItem( 'settingsSec' ) );
     
     // add extra seconds
-    sec += extraSecs;
+    sec = sec + extraSecs;
     
     if ( sec > 59 ) {
         sec = sec - 60;
