@@ -111,6 +111,7 @@ function confirmReset (buttonIndex) {
     //alert( 'You selected button with index: ' + buttonIndex );
     
     if ( buttonIndex === 1 ) {
+        
         // pause timer
         clearInterval(chessClock);
         
@@ -121,8 +122,8 @@ function confirmReset (buttonIndex) {
         var settingSecs = 0;
         
         // restore timers
-        $( '.m' ).html( settingsMin );
-        $( '.s' ).html( leadingZero( settingsSec ) );
+        $( '#mins' ).html( settingsMin );
+        $( '#secs' ).html( leadingZero( settingsSec ) );
         
     } else {
         // nothing
