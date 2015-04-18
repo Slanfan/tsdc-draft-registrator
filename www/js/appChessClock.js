@@ -39,10 +39,10 @@ $( '.btnSaveSettings' ).bind( 'touchstart', function() {
     $( '.settingsPanel' ).animate({ "top": "+=80vh" }, { duration: 1000, easing: 'easeOutExpo' });
 });
 
-$( '.btnActive' ).bind( 'touchstart', function() {
+$( '.btnActive' ).bind( 'touchend', function() {
     
     // remove class to prevent clicks
-    $( '.btnChessClodck' ).addClass( 'btnActive' );
+    $( '.btnChessClock' ).addClass( 'btnActive' );
     $( this ).removeClass( 'btnActive' );
     
     // show pause button

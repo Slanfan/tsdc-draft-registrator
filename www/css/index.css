@@ -361,7 +361,7 @@ table {
     height: 35vh;
     cursor: pointer;
 }
-.btnChessClock:active {
+.btnActive:active {
     background-image: radial-gradient(center center, circle cover, #FFE3B3, #FFA200);
     background-image: -o-radial-gradient(center center, circle cover, #FFE3B3, #FFA200);
     background-image: -ms-radial-gradient(center center, circle cover, #FFE3B3, #FFA200);
