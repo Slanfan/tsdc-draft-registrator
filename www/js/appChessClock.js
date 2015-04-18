@@ -19,9 +19,6 @@ $( '#secSlider' ).bind( 'touchmove', function() {
     $( '#timerSec' ).html( this.value );
 });
 
-
-
-
 $( '.btnSaveSettings' ).bind( 'touchstart', function() {
     var Mins = $( '#minSlider' ).val();
     var Secs = $( '#secSlider' ).val();
@@ -110,20 +107,25 @@ function confirmReset (buttonIndex) {
     
     //alert( 'You selected button with index: ' + buttonIndex );
     
+    // pause timer
+    clearInterval(chessClock);
+    
+    // restore backgrounds
+    $( '.btnChessClock' ).css( 'background-color', '' );
+    
+    var settingMins = window.localStorage.getItem( "settingsMin" );
+    var settingSecs = 0;
+    
+    // restore timers
+    $( '.m' ).html( settingsMin );
+    $( '.s' ).html( leadingZero( settingsSec ) );
+    
+    // hide button
+    $( '#btnPause' ).addClass( 'btnHidden' );
+
+    
     if ( buttonIndex === 1 ) {
         
-        // pause timer
-        clearInterval(chessClock);
-        
-        // restore backgrounds
-        $( '.btnChessClock' ).css( 'background-color', '' );
-        
-        var settingMins = window.localStorage.setItem( "settingsMin" );
-        var settingSecs = 0;
-        
-        // restore timers
-        $( '#mins' ).html( settingsMin );
-        $( '#secs' ).html( leadingZero( settingsSec ) );
         
     } else {
         // nothing
