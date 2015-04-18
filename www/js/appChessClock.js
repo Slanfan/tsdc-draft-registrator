@@ -68,11 +68,6 @@ $( '.btnChessClock' ).bind( 'touchstart', function() {
     
 });
 
-var leadingZero = function (n) {
-    if (n < 10 && n >= 0) return '0' + n;
-    else return n;
-}
-
 $( '.menuChessClock img' ).bind( 'touchstart', function() {
     
     // store action
@@ -113,9 +108,9 @@ $( '.menuChessClock img' ).bind( 'touchstart', function() {
 
 function confirmReset (buttonIndex) {
     
-    alert( 'You selected button with index: ' + buttonIndex );
+    //alert( 'You selected button with index: ' + buttonIndex );
     
-    if ( buttonIndex == 1 ) {
+    if ( buttonIndex === 1 ) {
         // pause timer
         clearInterval(chessClock);
         
@@ -132,4 +127,9 @@ function confirmReset (buttonIndex) {
     } else {
         // nothing
     }
+}
+
+var leadingZero = function (n) {
+    if (n < 10 && n >= 0) return '0' + n;
+    else return n;
 }
