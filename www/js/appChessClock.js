@@ -52,6 +52,7 @@ $( '.btnActive' ).bind( 'touchend', function() {
     
     // add extra seconds
     sec = sec + extraSecs;
+    alert(sec + ' : ' + extraSecs);
     
     if ( sec > 59 ) {
         sec = sec - 60;
