@@ -59,7 +59,7 @@ $( '.btnActive' ).bind( 'touchend', function() {
     }
     if ( min >= localStorage.getItem( 'settingsMin' ) ) {
         min = localStorage.getItem( 'settingsMin' );
-        sec = leadingZero( 0 );
+        sec = 0;
     }
     
     $( this ).find( '.m' ).html( min );
