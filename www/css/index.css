@@ -2,6 +2,9 @@
 /* 
 http://www.google.com/fonts#UsePlace:use/Collection:Playfair+Display|Poiret+One|Monda|Ubuntu+Condensed|Inconsolata|Pathway+Gothic+One|Voltaire|Montserrat|Roboto+Condensed
 */
+::-webkit-scrollbar {
+    display: none; 
+}
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -26,6 +29,7 @@ body {
     color: white;
     text-align: center;
     font-family: Monda;
+    overflow: hidden;
 }
 .start-input {
     position: fixed;
