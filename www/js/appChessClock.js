@@ -52,12 +52,18 @@ $( '.btnActive' ).bind( 'touchend', function() {
     
     // add extra seconds
     sec = sec + extraSecs;
-    alert(sec + ' : ' + extraSecs);
     
     if ( sec > 59 ) {
         sec = sec - 60;
         min++;
     }
+    if ( min > localStorage.getItem( 'settingsMin' ) ) {
+        min = localStorage.getItem( 'settingsMin' );
+        sec = leadingZero( 0 );
+    }
+    
+    $( this ).find( '.m' ).html( min );
+    $( this ).find( '.s' ).html( leadingZero( sec ) );
     
     // show pause button
     $( '#btnPause' ).removeClass( 'btnHidden' );
