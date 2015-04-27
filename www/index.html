@@ -23,165 +23,241 @@
         <title>TSDC: Draft Registrator</title>
         
         <title>Slanfans testing</title>
+        
+        <script type="text/javascript" src="js/html2canvas.js"></script>
+        <script type="text/javascript" src="js/stackblur.js"></script>
+        
+        <script>
+            $(function () {
+                html2canvas($("body"), {
+                    onrendered: function (canvas) {
+                        $(".blurheader").append(canvas);
+                        $("canvas").attr("id", "canvas");
+                        stackBlurCanvasRGB(
+                            'canvas',
+                        0,
+                        0,
+                        $("canvas").width(),
+                        $("canvas").height(),
+                        10);
+                    }
+                });
+                vv = setTimeout(function () {
+                    $("header").show();
+                    clearTimeout(vv);
+                }, 200);
+            });
+            
+            $(window).scroll(function () {
+                $("canvas").css(
+                    "-webkit-transform",
+                    "translatey(-" + $(window).scrollTop() + "px)");
+            });
+            
+            window.onresize = function () {
+                $("canvas").width($(window).width());
+            };
+            
+            $(document).bind('touchmove', function () {
+                $("canvas").css(
+                    "-webkit-transform",
+                    "translatey(-" + $(window).scrollTop() + "px)");
+            });
+            
+            $(document).bind('touchend', function () {
+                $("canvas").css(
+                    "-webkit-transform",
+                    "translatey(-" + $(window).scrollTop() + "px)");
+            });
+        </script>
     </head>
     <body>
         
         <input type="hidden" id="card-id" />
-        
-        <div class="start-input">
-            <div class="data players">
-                <p>Number of players?</p>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="btn Minus">-</div>
-                            </td>
-                            <td>
-                                <div class="number" id="settingPlayers">8</div>
-                            </td>
-                            <td>
-                                <div class="btn Plus">+</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="data boosters">
-                <p>Number of booster?</p>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="btn Minus">-</div>
-                            </td>
-                            <td>
-                                <div class="number" id="settingPacks">3</div>
-                            </td>
-                            <td>
-                                <div class="btn Plus">+</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="data cards">
-                <p>Number of card in boosters?</p>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="btn Minus">-</div>
-                            </td>
-                            <td>
-                                <div class="number" id="settingCards">15</div>
-                            </td>
-                            <td>
-                                <div class="btn Plus">+</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="data start">
-                <div id="btnStart">start registration</div> 
-            </div>
-        </div>
-        
-        <div class="action-container">
-            <div class="action-left">
+        <section>
+            <div class="homeScreen">
+                <header>home</header>
+                <div class="blurheader"></div>
                 
-            </div>
-            <div class="action-middle">
-                <div class="btnAction">
-                    <img src="img/icon-view.png" />
-                    <p>
-                        current pack
-                    </p>
-                </div>
-                <div class="btnAction">
-                    <img src="img/icon-list.png" />
-                    <p>
-                        earlier packs
-                    </p>
-                </div>
-                <div class="btnAction">
-                    <img src="img/icon-new.png" />
-                    <p>
-                        new draft
-                    </p>
-                </div>
-                <div class="btnAction">
-                    <img src="img/icon-history.png" />
-                    <p>
-                        history
-                    </p>
-                </div>
-                <div class="btnAction">
-                    <img src="img/icon-home.png" />
-                    <p>
-                        home
-                    </p>
+                <div class="homeApps">
+                    <div class="homeAppBtn" id="btnDraftRef">draft registrator</div>
+                    <div class="homeAppBtn" id="btnChessClock">chess clock</div>
+                    <div class="homeAppBtn" id="btnDraftTimer">draft timer</div>
+                    <div class="homeAppBtn" id="btnLifeCounter">life counter</div>
+                    <div class="homeAppBtn" id="btnCoinFlip">coin flip</div>
+                    <div class="homeAppBtn" id="btnDieRoll">die roll</div>
+                    <div class="homeAppBtn" id="btnRuleQuery">rule query</div>
+                    <div class="homeAppBtn" id="btnCardQuery">card query</div>
+                    <div class="homeAppBtn" id="btnNotes">notes</div>
+                    
+                    <div class="homeAppBtn" id="btnDraftRef"></div>
+                    <div class="homeAppBtn" id="btnChessClock"></div>
+                    <div class="homeAppBtn" id="btnDraftTimer"></div>
+                    <div class="homeAppBtn" id="btnLifeCounter"></div>
+                    <div class="homeAppBtn" id="btnCoinFlip"></div>
+                    <div class="homeAppBtn" id="btnDieRoll"></div>
+                    <div class="homeAppBtn" id="btnRuleQuery"></div>
+                    <div class="homeAppBtn" id="btnCardQuery"></div>
+                    <div class="homeAppBtn" id="btnNotes"></div>
                 </div>
             </div>
-            <div class="action-right">
-                
+        </section>
+        <div class="app" id="draftReg">
+            <div class="start-input">
+                <div class="data players">
+                    <p>Number of players?</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="btn Minus">-</div>
+                                </td>
+                                <td>
+                                    <div class="number" id="settingPlayers">8</div>
+                                </td>
+                                <td>
+                                    <div class="btn Plus">+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="data boosters">
+                    <p>Number of booster?</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="btn Minus">-</div>
+                                </td>
+                                <td>
+                                    <div class="number" id="settingPacks">3</div>
+                                </td>
+                                <td>
+                                    <div class="btn Plus">+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="data cards">
+                    <p>Number of card in boosters?</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="btn Minus">-</div>
+                                </td>
+                                <td>
+                                    <div class="number" id="settingCards">15</div>
+                                </td>
+                                <td>
+                                    <div class="btn Plus">+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="data start">
+                    <div id="btnStart">start registration</div> 
+                </div>
             </div>
-        </div>
-        <div class="info-container">
-            <div class="pick-info" id="pick-info">Pack 1 - Card 1</div>
-            <div class="card-number-viewer" id="card-number"># 000</div>
-            <div class="auto-card-name" id="card-name">Please enter card id</div>
-        </div>
-        
-        <div class="keypad-container">
-            <table class="keypad">
-                <tr>
-                    <td class="numpad">1</td>
-                    <td class="numpad">2</td>
-                    <td class="numpad">3</td>
-                </tr>
-                <tr>
-                    <td class="numpad">4</td>
-                    <td class="numpad">5</td>
-                    <td class="numpad">6</td>
-                </tr>
-                <tr>
-                    <td class="numpad">7</td>
-                    <td class="numpad">8</td>
-                    <td class="numpad">9</td>
-                </tr>
-                <tr>
-                    <td class="clear">cl</td>
-                    <td class="numpad">0</td>
-                    <td class="add">add</td>
-                </tr>
-            </table>
-        </div>
-      
-        <div class="booster-viewer">
-          <div class="booster-header" id="booster-header"></div>
-          <div class="card-list-container">
-              <ol class="card-list" id="booster">
-                  
-              </ol>
-          </div>
-        </div>
-      
-        <div class="output-container">
-          <table id="output-table" width="100%">
-              <tbody>
-                  <tr class="header">
-                      <td>Pack</td>
-                      <td>Card</td>
-                      <td>ID</td>
-                      <td>Name</td>
-                      <td>Picked</td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
-        
+            
+            <div class="action-container">
+                <div class="action-left">
+                    
+                </div>
+                <div class="action-middle">
+                    <div class="btnAction">
+                        <img src="img/icon-view.png" />
+                        <p>
+                            current pack
+                        </p>
+                    </div>
+                    <div class="btnAction">
+                        <img src="img/icon-list.png" />
+                        <p>
+                            earlier packs
+                        </p>
+                    </div>
+                    <div class="btnAction">
+                        <img src="img/icon-new.png" />
+                        <p>
+                            new draft
+                        </p>
+                    </div>
+                    <div class="btnAction">
+                        <img src="img/icon-history.png" />
+                        <p>
+                            history
+                        </p>
+                    </div>
+                    <div class="btnAction">
+                        <img src="img/icon-home.png" />
+                        <p>
+                            home
+                        </p>
+                    </div>
+                </div>
+                <div class="action-right">
+                    
+                </div>
+            </div>
+            <div class="info-container">
+                <div class="pick-info" id="pick-info">Pack 1 - Card 1</div>
+                <div class="card-number-viewer" id="card-number"># 000</div>
+                <div class="auto-card-name" id="card-name">Please enter card id</div>
+            </div>
+            
+            <div class="keypad-container">
+                <table class="keypad">
+                    <tr>
+                        <td class="numpad">1</td>
+                        <td class="numpad">2</td>
+                        <td class="numpad">3</td>
+                    </tr>
+                    <tr>
+                        <td class="numpad">4</td>
+                        <td class="numpad">5</td>
+                        <td class="numpad">6</td>
+                    </tr>
+                    <tr>
+                        <td class="numpad">7</td>
+                        <td class="numpad">8</td>
+                        <td class="numpad">9</td>
+                    </tr>
+                    <tr>
+                        <td class="clear">cl</td>
+                        <td class="numpad">0</td>
+                        <td class="add">add</td>
+                    </tr>
+                </table>
+            </div>
+          
+            <div class="booster-viewer">
+              <div class="booster-header" id="booster-header"></div>
+              <div class="card-list-container">
+                  <ol class="card-list" id="booster">
+                      
+                  </ol>
+              </div>
+            </div>
+          
+            <div class="output-container">
+              <table id="output-table" width="100%">
+                  <tbody>
+                      <tr class="header">
+                          <td>Pack</td>
+                          <td>Card</td>
+                          <td>ID</td>
+                          <td>Name</td>
+                          <td>Picked</td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+        </div>   
+            
         <div class="app" id="chessClock">
             <div class="btnChessClock btnActive Flipped">
                 <p>
@@ -213,9 +289,10 @@
         
         
         
+        
         <!-- NOTHING BELOW THIS LINE! -->
         <script type="text/javascript" src="phonegap.js"></script>
-        <!--<script type="text/javascript" src="js/scripts.js"></script>-->
+        <script type="text/javascript" src="js/scripts.js"></script>
         <script type="text/javascript" src="js/appChessClock.js"></script>
     </body>
 </html>

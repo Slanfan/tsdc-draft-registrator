@@ -2,6 +2,11 @@
 /* 
 http://www.google.com/fonts#UsePlace:use/Collection:Playfair+Display|Poiret+One|Monda|Ubuntu+Condensed|Inconsolata|Pathway+Gothic+One|Voltaire|Montserrat|Roboto+Condensed
 */
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 ::-webkit-scrollbar {
     display: none; 
 }
@@ -17,11 +22,85 @@ body {
     background-size: cover;
     overflow: hidden;
 }
-.app {
-    position: fixed;
+.homeHeader {
+    background-color: rgba(0,0,0,0.5);
+    height: 10vh;
+    position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    color: white;
+    text-transform: uppercase;
+    z-index: 10;
+    font-family: Monda-Bold;
+    text-align: center;
+    font-size: 6vh;
+}
+
+
+header, .blurheader {
+    background: rgba(0,0,0,0.6);
+    height: 10vh;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-family: Monda-Bold;
+    font-size: 6vh;
+    color: white;
+    text-transform: uppercase;
+    border-bottom:1px solid rgba(0, 0, 0, .2);
+    z-index: 10000000000;
+}
+header {
+    text-align: center;
+    display: none;
+    max-width: 1024px;
+}
+.blurheader {
+    background: transparent;
+    overflow: hidden;
+    z-index: 10000;
+    background: #fff;
+    left: 0;
+}
+#canvas {
+    opacity:1;
+    z-index: 100;
+    position: absolute;
+    display: block;
+    top: 3px;
+}
+
+.homeAppBtn {
+    float: left;
+    width: 30vw;
+    height: 30vw;
+    margin-left: 2vw;
+    margin-right: 1vw;
+    margin-top: 3vw;
+    background-color: rgba(255,0,0,0.5);
+    text-align: center;
+    font-size: 2vh;
+    color: white;
+    text-transform: uppercase;
+    font-family: Monda-Bold;
+}
+
+.homeApps {
+    position: absolute;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
+    overflow: auto;
+}
+.app {
+    position: fixed;
+    top: 100vh;
+    left: 0;
     right: 0;
     background-color: rgba(40,40,40,1);
     text-transform: uppercase;
@@ -32,7 +111,7 @@ body {
     overflow: hidden;
 }
 .start-input {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
