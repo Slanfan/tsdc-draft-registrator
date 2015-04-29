@@ -202,3 +202,18 @@ function pick_card(id,name,packNr,cardNr) {
 function alertDismissed() {
     // do something
 }
+
+$( '.homeAppBtn' ).bind( 'click', function() {
+    var action = $(this).data('action');
+    $( "#"+action ).animate({ "top": "-=100vh" }, { duration: 1000, easing: 'easeOutExpo' });
+});
+$( '.homeAppBtn' ).bind( 'touchend', function() {
+    var action = $(this).data('action');
+    $( "#"+action ).animate({ "top": "-=100vh" }, { duration: 1000, easing: 'easeOutExpo' });
+});
+
+$('.app').on('swiperight', function() {
+    $(this).animate({ "left": "+=100vw", "right": "-=100vw" }, { duration: 2000, easing: 'easeOutExpo' });
+    $(this).animate({ "top": "+=100vh" });
+    $(this).animate({ "left": "-=100vw", "right": "+=100vw" });
+});

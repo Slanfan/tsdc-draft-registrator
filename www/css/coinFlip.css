@@ -1,0 +1,20 @@
+
+#flipResult {
+    font-size: 2em;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.coin img {
+    position: absolute;
+    top: 50vh;
+    margin-top: -30vw;
+    left: 50vw;
+    margin-left: -30vw;
+    width: 60vw;
+    height: 60vw;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}

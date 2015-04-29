@@ -15,9 +15,13 @@
         
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="css/coinFlip.css" />
+        
         
         <!-- Jquery -->
         <script src="js/jquery-1.11.1.js"></script>
+        <script src="js/jquery.mobile-1.4.5.js"></script>
         <script src="js/jquery-ui-1.11.4.js"></script>
 
         <title>TSDC: Draft Registrator</title>
@@ -28,32 +32,34 @@
         
         <input type="hidden" id="card-id" />
         <section id="homeScreen">
-            <header>home</header>
-            <div class="blurheader"></div>
+            <div class="homeHeader">mtg toolbox</div>
             
             <div class="homeApps">
-                <div class="homeAppBtn" id="btnDraftRef">draft registrator</div>
-                <div class="homeAppBtn" id="btnChessClock">chess clock</div>
-                <div class="homeAppBtn" id="btnDraftTimer">draft timer</div>
-                <div class="homeAppBtn" id="btnLifeCounter">life counter</div>
-                <div class="homeAppBtn" id="btnCoinFlip">coin flip</div>
-                <div class="homeAppBtn" id="btnDieRoll">die roll</div>
-                <div class="homeAppBtn" id="btnRuleQuery">rule query</div>
-                <div class="homeAppBtn" id="btnCardQuery">card query</div>
-                <div class="homeAppBtn" id="btnNotes">notes</div>
-                
-                <div class="homeAppBtn" id="btnDraftRef"></div>
-                <div class="homeAppBtn" id="btnChessClock"></div>
-                <div class="homeAppBtn" id="btnDraftTimer"></div>
-                <div class="homeAppBtn" id="btnLifeCounter"></div>
-                <div class="homeAppBtn" id="btnCoinFlip"></div>
-                <div class="homeAppBtn" id="btnDieRoll"></div>
-                <div class="homeAppBtn" id="btnRuleQuery"></div>
-                <div class="homeAppBtn" id="btnCardQuery"></div>
-                <div class="homeAppBtn" id="btnNotes"></div>
+                <div class="homeAppBtn gradientRed btnTwo" data-action="draftReg">draft registrator</div>
+                <div class="homeAppBtn gradientGreen btnThird" data-action="draftTimer">draft timer</div>
+                <div class="homeAppBtn gradientBlue btnThird" data-action="chessClock">chess clock</div>
+                <div class="homeAppBtn gradientOrange btnThird" data-action="draftTimer">life counter</div>
+                <div class="homeAppBtn gradientDarkOrange btnThird" data-action="coinFlip">coin flip</div>
+                <div class="homeAppBtn gradientDarkGreen btnThird" data-action="diceRoll">dice roll</div>
+                <div class="homeAppBtn gradientTeal btnTwo" data-action="manaCalc">mana calculator</div>
+                <div class="homeAppBtn gradientGrey btnThird" data-action="ruleQuery">rule query</div>
+                <div class="homeAppBtn gradientRed btnThird" data-action="cardQuery">card query</div>
+                <div class="homeAppBtn gradientGreen btnThird" data-action="notes">notes</div>
+                <div class="homeAppBtn gradientBlue btnOne" data-action="swissTournament">swiss tournament</div>
+                <div class="homeAppBtn gradientOrange btnOne" data-action="singleElimination">single elimination</div>
+                <div class="homeAppBtn gradientDarkGreen btnThird" data-action="draftTimer">daily mtg</div>
+                <div class="homeAppBtn gradientTeal btnThird" data-action="draftTimer">mana pool</div>
+                <div class="homeAppBtn gradientDarkOrange btnThird" data-action="draftTimer">momir basic</div>
+                <div class="homeAppBtn gradientGrey btnOne" data-action="draftTimer">mtg quiz</div>
             </div>
         </section>
         
+        <div class="app" id="coinFlip">
+            <div class="coin">
+                <img src="img/head.png">
+            </div>
+            <h1 id="flipResult">HEADS OR TAILS?</h1>
+        </div>
         <div class="app" id="draftReg">
             <div class="start-input">
                 <div class="data players">
@@ -246,56 +252,6 @@
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
         <script type="text/javascript" src="js/appChessClock.js"></script>
-        <script type="text/javascript" src="js/html2canvas.js"></script>
-        <script type="text/javascript" src="js/stackblur.js"></script>
-        
-        <script>
-            $(function () {
-                html2canvas($("body"), {
-                    background: undefined,
-                    onrendered: function (canvas) {
-                        $(".blurheader").append(canvas);
-                        $("canvas").attr("id", "canvas");
-                        stackBlurCanvasRGB(
-                            'canvas',
-                        0,
-                        0,
-                        $("canvas").width(),
-                        $("canvas").height(),
-                        14);
-                    }
-                });
-                vv = setTimeout(function () {
-                    $("header").show();
-                    clearTimeout(vv);
-                }, 200);
-            });
-            
-            window.onresize = function () {
-                $("canvas").width($(window).width());
-            };
-            
-            $(document).bind('touchmove', function () {
-                $("canvas").css(
-                    "-webkit-transform",
-                    "translatey(-" + $(window).scrollTop() + "px)");
-            });
-            
-            $(document).bind('touchend', function () {
-                $("canvas").css(
-                    "-webkit-transform",
-                    "translatey(-" + $(window).scrollTop() + "px)");
-            });
-            
-            $('.homeApps').on('scroll',function(){
-                console.log('Event Fired');
-                $("canvas").css(
-                        "-webkit-transform",
-                        "translatey(-" + $('.homeApps').scrollTop() + "px)");
-            });
-            
-            
-        </script>
-        
+        <script type="text/javascript" src="js/coinFlip.js"></script>
     </body>
 </html>
